@@ -1,1 +1,1 @@
-Learning about HTML
+Learning about HTML and JS
