@@ -1,11 +1,11 @@
 body {
-    background: whitesmoke;
+    background: #C96567;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
 div {
-    background: white;
+    background: #97AABD;
     padding: 20px;
     width:75%;
     margin: auto; /* Center horizonally */
@@ -13,9 +13,41 @@ div {
 
 h1 {
     text-align: center;
+    color: #FAED26;
 }
 
-li {
+h2 {
+    color: #FAED26;
+}
+
+p {
+    color: #FEF9C7;
+}
+
+  ul {
     list-style-type: none;
-    display: inline-table;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: table;
+    color: white;
+    text-align: center;
+    padding: 4px 8px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: gray;
+  }
+
+td {
+    padding: 5px;
+    text-align: center;
 }

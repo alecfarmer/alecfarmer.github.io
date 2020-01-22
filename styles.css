@@ -13,11 +13,15 @@ div {
 
 a {
     text-decoration: none;
-    color: rgb(255, 208, 0);
+    color: #FFD000;
 }
 
-h1, h2 {
-    color: whitesmoke
+h1, h2, h5, p {
+    color: whitesmoke;
+}
+
+h1, h5, p {
+    text-align: center;
 }
 
 
