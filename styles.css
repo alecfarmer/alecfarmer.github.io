@@ -1,20 +1,30 @@
 body {
     background: #223C74;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 div {
-    background: #C3D8F5;
+    background: #7C91C2;
     padding: 20px;
-    width:75%;
+    width: 75%;
     margin: auto; /* Center horizonally */
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+}
+
+h1, h2 {
+    color: whitesmoke
 }
 
 
 /*
-#223C74
+#223C74 // margin
 #3E61A8
-#7C91C2
-#C3D8F5
+#7C91C2 // div
+#C3D8F5 //
 #0C345A
 */
