@@ -1,0 +1,69 @@
+body {
+    background-image: url("images/cowbackground.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    background: rgba(173, 216, 230, 0.95);
+    padding: 20px;
+    width:75%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 10px rgba(146, 192, 207, 0.95);
+}
+/*
+#main-nav a {
+    background: black;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: table;
+}
+
+#main-nav a:hover {
+    background-color: #FBC5B4;
+}
+*/
+
+#main-nav a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 5px;
+    color: #342C28;
+    border-bottom: 2px solid transparent;
+}
+
+#main-nav a:hover {
+    border-bottom: 2px solid salmon;
+}
+
+#main-nav li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    color: #F38F72;
+}
+
+h2 {
+    color: #F38F72;
+}
+
+p {
+    color: #434343;
+}
+
+#first, #second img {
+    padding: 10px;
+    border: 2px solid transparent;
+}
+
+#first:hover {
+    border: 2px solid skyblue;
+}
+
+#second:hover {
+    border: 2px solid pink;
+}
