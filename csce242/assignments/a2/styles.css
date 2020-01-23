@@ -8,7 +8,7 @@ div {
     background: #97AABD;
     padding: 20px;
     width:75%;
-    margin: auto; /* Center horizonally */
+    margin: auto;
 }
 
 h1 {
@@ -63,4 +63,8 @@ td {
 .list label {
   color: #FAED26;
   text-decoration: underline;
+}
+
+img {
+  padding: 20px;
 }
