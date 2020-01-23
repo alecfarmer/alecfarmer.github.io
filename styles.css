@@ -4,11 +4,13 @@ body {
     text-decoration: none;
 }
 
-div {
-    background: #7C91C2;
+#content {
+    background: rgba(124, 145, 194, 0.9);
     padding: 20px;
     width: 75%;
     margin: auto; /* Center horizonally background: #223C74;*/
+    border-radius: 10px;
+    box-shadow: 5px 10px rgba(98, 116, 158, 0.603);
 }
 
 a {
@@ -22,6 +24,10 @@ h1, h2, h5, p {
 
 h1, h5, p {
     text-align: center;
+}
+
+li {
+    list-style-type: circle;
 }
 
 
