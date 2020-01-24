@@ -1,6 +1,7 @@
 body {
-    /*background-image: url("sitebackground.png");*/
-    background-color: #150F19;
+    /*background-image: url("16.jpg");*/
+    /*background-color: #150F19;*/
+    background-color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
@@ -23,11 +24,6 @@ body {
     z-index: -1;
   }
 
-a {
-    text-decoration: none;
-    color: #FFD000;
-}
-
 h1, h2, h5, p {
     color: whitesmoke;
 }
@@ -40,6 +36,17 @@ li {
     list-style-type: circle;
 }
 
+a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 5px;
+    color: #FFD000;
+    border-bottom: 2px solid transparent;
+}
+
+a:hover {
+    border-bottom: 2px solid white;
+}
 
 /*
 #223C74 // margin
