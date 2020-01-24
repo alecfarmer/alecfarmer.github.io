@@ -1,5 +1,6 @@
 body {
-    background-image: url("sitebackground.png");
+    /*background-image: url("sitebackground.png");*/
+    background-color: #150F19;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
