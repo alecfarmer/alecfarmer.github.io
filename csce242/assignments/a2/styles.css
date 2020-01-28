@@ -1,27 +1,28 @@
 body {
-    background: #C96567;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/a2background.jpg);
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
 }
 
 #content {
-    background: #97AABD;
+    background: rgba(151, 170, 189, 0.8);
     padding: 20px;
-    width: 75%;
+    width: 65%;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
-h1 {
+#main_h1 {
     text-align: center;
     color: #FAED26;
 }
 
-h2 {
+#home_h2, #lense_h2, #frame_h2 {
     color: #FAED26;
 }
 
-p {
+#home_p, #lense_p, #frame_p {
     color: #FEF9C7;
 }
 
@@ -46,7 +47,8 @@ p {
 }
   
 #main-nav a:hover {
-  background-color: gray;
+  background-color: darkgrey;
+  text-decoration: underline yellow;
 }
 
 #model-table td {
@@ -67,6 +69,7 @@ label {
   list-style: square;
 }
 
-img {
+#home_img, #lense_img, #frame_img {
   padding: 20px;
+  border: transparent;
 }

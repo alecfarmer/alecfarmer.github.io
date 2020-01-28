@@ -1,7 +1,6 @@
 body {
-    /*background-image: url("16.jpg");*/
     /*background-color: #150F19;*/
-    background-color: black;
+    background-image: url(sitebackground.png);
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
@@ -9,20 +8,18 @@ body {
 #content {
     background: rgba(124, 145, 194, 0.9);
     padding: 20px;
-    width: 75%;
+    width: 50%;
     margin: auto; /* Center horizonally background: #223C74;*/
     border-radius: 10px;
-    box-shadow: 5px 10px rgba(98, 116, 158, 0.603);
+    box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
 }
 
-.background {
+#content {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 h1, h2, h5, p {
     color: whitesmoke;
@@ -39,7 +36,7 @@ li {
 a {
     text-decoration: none;
     font-size: 18px;
-    padding: 0 5px;
+    padding: 0px 5px;
     color: #FFD000;
     border-bottom: 2px solid transparent;
 }
