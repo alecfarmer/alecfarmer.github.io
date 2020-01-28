@@ -1,0 +1,53 @@
+/* Styles for everything */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#main_header {
+    background: lightblue;
+    padding: 10px;
+}
+
+#main-content {
+    background: lightcyan;
+    padding: 10px;
+    /* align-items: flex-start; */
+}
+
+#main-content h1 {
+    text-align: center;
+}
+
+#kitten-cols {
+    display: flex;
+    justify-content: space-around;
+}
+
+#main_footer {
+    background: lightgray;
+    padding: 10px;
+}
+
+#main_footer p {
+    color: black;
+    text-align: center;
+}
+
+#special_section {
+    background: lightgreen;
+}
+
+.section {
+    background: lightcoral;
+    padding: 10px;
+    flex-basis: 30%;
+}
+
+.first-col {
+    background: skyblue;
+}
+
+.section h2 {
+    color: purple;
+}
