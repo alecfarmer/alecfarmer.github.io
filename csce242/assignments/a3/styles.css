@@ -1,4 +1,109 @@
-div {
-    background-color: aqua;
-    background
+/* Styles for everything */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }
+/* HEADER */
+#main_header {
+    background: #595959;
+    padding: 10px;
+}
+
+#main-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main-nav a {
+    text-decoration: solid;
+    color: white;
+}
+/* END HEADER */
+
+/* MAIN DIV */
+#main-content {
+    background: white;
+    /* align-items: flex-start; */
+}
+
+#main-content-sections {
+    display: flex;
+    justify-content: space-around;
+}
+
+.section {
+    background: lightcoral;
+    padding: 10px;
+    flex-basis: 30%;
+}
+
+.section h2 {
+    color: black;
+}
+
+#first-col {
+    background: lightblue;
+    flex: 1;
+}
+
+#second-col {
+    background: lightblue;
+}
+
+#sidebar-list {
+    color: black;
+}
+
+#secondary-sections {
+    background: lightcyan;
+    padding: 10px;
+}
+
+#columns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-sections {
+    background: #E2F0D9;
+    padding: 10px;
+    flex-basis: 30%;
+    border: solid #6780AC;
+}
+
+#columns-2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-sections-inside {
+    background: #4472C4;
+    padding: 10px;
+    flex-basis: 30%;
+}
+
+.col-sections-inside h2 {
+    text-align: center;
+    font-size: small;
+}
+
+.imgs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* END DIV */
+
+/* FOOTER */
+#main_footer {
+    background: lightgray;
+    padding: 10px;
+}
+
+#main_footer p {
+    color: black;
+    text-align: center;
+}
+/* END FOOTER */

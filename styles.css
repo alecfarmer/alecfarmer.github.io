@@ -1,37 +1,41 @@
-body {
-    background-image: url(sitebackground.png);
+/* Styles for everything */
+* {
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
 }
 
+/* Body of webpage : for site background */
+body {
+    background-image: url(sitebackground.png);
+    text-decoration: none;
+    margin: 5%;
+}
+
+/* Main div */
 #content {
     background: rgba(124, 145, 194, 0.9);
     padding: 20px;
     width: 65%;
-    margin: auto; /* Center horizonally background: #223C74;*/
+    margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
 }
 
-#content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
+/* Styles for heading 1,2,5, and paragraphs */
 h1, h2, h5, p {
     color: whitesmoke;
 }
 
+/* Centering the text for heading 1,5, and paragraph */
 h1, h5, p {
     text-align: center;
 }
 
+/* Assigning bullet style to assignment's list */
 li {
     list-style-type: circle;
 }
 
+/* Link styles */
 a {
     text-decoration: none;
     font-size: 18px;
@@ -40,11 +44,14 @@ a {
     border-bottom: 2px solid transparent;
 }
 
+/* Link hover atributes */
 a:hover {
     border-bottom: 2px solid white;
 }
 
-/*
+
+/* Color pallet
+
 #223C74 // margin
 #3E61A8
 #7C91C2 // div

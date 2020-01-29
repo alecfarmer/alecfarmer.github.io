@@ -54,7 +54,7 @@ body {
 #model-table td {
     padding: 5px;
     text-align: center;
-    border: 2px ridge burlywood; /*ridge/inset/double*/
+    border: 2px ridge burlywood;
     background-color: gainsboro;
 }
 
