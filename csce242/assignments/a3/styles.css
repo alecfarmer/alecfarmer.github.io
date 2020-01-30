@@ -1,41 +1,43 @@
 /* Styles for everything */
 * {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10px;
 }
+
+#content {
+    padding: 10px;
+    margin: 5px;
+    display: flexbox;
+    justify-content: center;
+}
+
 /* HEADER */
 #main_header {
     background: #595959;
-    padding: 10px;
+    padding: 1px;
 }
 
 #main-nav {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    font-size: 25px;
 }
 
 #main-nav a {
-    text-decoration: solid;
+    text-decoration: none;
     color: white;
 }
 /* END HEADER */
 
-/* MAIN DIV */
-#main-content {
-    background: white;
-    /* align-items: flex-start; */
-}
-
 #main-content-sections {
     display: flex;
-    justify-content: space-around;
 }
 
 .section {
     background: lightcoral;
     padding: 10px;
     flex-basis: 30%;
+    margin: 10px;
 }
 
 .section h2 {
@@ -43,44 +45,56 @@
 }
 
 #first-col {
-    background: lightblue;
+    background: #DAE3F3;
     flex: 1;
 }
 
+#first-col p {
+    font-size: larger;
+}
+
 #second-col {
-    background: lightblue;
+    background: #DAE3F3;
 }
 
 #sidebar-list {
     color: black;
+    font-size: 25px;
 }
 
-#secondary-sections {
-    background: lightcyan;
-    padding: 10px;
-}
+/**/
 
+/* Main Div */
 #columns {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    
 }
 
+/* Two main sections */
 .col-sections {
     background: #E2F0D9;
+    display: flexbox;
     padding: 10px;
-    flex-basis: 30%;
     border: solid #6780AC;
 }
 
+/* Nested Div */
 #columns-2 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    border: solid red;
+
 }
 
+/* Nested Columns */
 .col-sections-inside {
     background: #4472C4;
     padding: 10px;
-    flex-basis: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin: 29px;
+    border: solid pink;
 }
 
 .col-sections-inside h2 {
@@ -90,7 +104,8 @@
 
 .imgs {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 10px;
 }
 
 
@@ -98,12 +113,17 @@
 
 /* FOOTER */
 #main_footer {
-    background: lightgray;
+    background: #595959;
     padding: 10px;
 }
 
-#main_footer p {
-    color: black;
+#copy {
+    color: white;
     text-align: center;
+}
+
+#address {
+    text-align: right;
+    color: white;
 }
 /* END FOOTER */
