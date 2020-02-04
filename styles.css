@@ -22,9 +22,20 @@ body {
     margin: 20px;
 }
 
-#assignment-cols a, .footer-list-div a {
+#assignment-cols a {
     text-decoration: none;
     color: black;
+}
+
+.footer-list-div li {
+    list-style-type: circle;
+}
+
+.footer-list-div a {
+    text-decoration: none;
+    color: #FFD000;
+    padding: 0px 5px;
+    font-size: 18px;
 }
 
 .footer-list-div a:hover {
