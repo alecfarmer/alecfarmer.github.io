@@ -1,3 +1,4 @@
+/* Styles for all content */
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -5,11 +6,12 @@
 body {
     margin-left: 10%;
     margin-right: 10%;
-    background: #E9E9E9;
+    background: #dad8d8;
 }
+/* End of Styles for all content */
 
-
-.main-header, .main-content section, .three-cols section, .more-cols section, #main-footer {
+/* Margins, backgrounds, borders, padding */
+.main-header, .main-content section, .nested-cols section, .center-cols-nested section, #main-footer, #image {
     padding: 10px;
     margin: 5px;
 }
@@ -19,26 +21,42 @@ body {
 }
 
 #main-header ul li {
-    background: #88BBD6;
+    background: #7572a0;
 }
 
 .main-content section {
-    background: #99D3Df;
+    background: #a5b7e6;
 }
 
-.more-cols section {
-    background: #99D3Df;
-    border: 2px solid #629497;
+.center-cols-nested section {
+    background: #a5b7e6;
+    border: 2px solid #69789e;
 }
 
-.three-cols section {
-    background: #d1b8db;
-    border: 2px solid #6a5872;
+.nested-cols section {
+    background: #8570a1;
+    border: 2px solid #4e3d64;
 }
 
 #main-footer {
-    background: #88BBD6;
+    background: #7572a0;
+    padding: 1px 10px;
 }
+
+#main-footer h3, #main-footer h4 {
+    margin: 15px;
+}
+
+.nested-cols {
+    padding: 0px;
+    padding-top: 10px;
+}
+
+#sidebar ul {
+    padding: 15px;
+    margin-bottom: 0px;
+}
+/* End of Margins, backgrounds, borders, padding */
 
 /* Nav Bar */
 #main-nav ul {
@@ -58,8 +76,9 @@ body {
     font-size: 25px;
     color: white;
 }
+/* End of Nav Bar */
 
-/* Headers */
+/* Headers & Text */
 #content h1 {
     text-align: center;
 }
@@ -68,22 +87,17 @@ body {
     text-align: left;
 }
 
-.two-cols h2 {
+.center-cols h2 {
     padding: 0px;
     margin: 0px;
 }
 
-.two-cols h3 {
+.center-cols h3 {
     text-align: center;
 }
 
-.two-cols section h3 {
+.center-cols section h3 {
     color: white;
-}
-
-.three-cols {
-    padding: 0px;
-    padding-top: 10px;
 }
 
 #sidebar h2, #extra-flex h2 {
@@ -97,26 +111,23 @@ body {
     margin-bottom: 0px;
 }
 
-#sidebar ul {
-    padding: 15px;
-    margin-bottom: 0px;
+#main-footer h3, #main-footer h4 {
+    color: white;
 }
 
 #sidebar ul li {
     font-size: larger;
     margin: 5px;
 }
+/* End of Headers & Text */
 
-#main-footer h3, #main-footer h4 {
-    color: white;
-}
-
+/* Desktop display */
 @media(min-width:900px) {
-    #main-nav, #main-nav ul, .main-content, .two-cols, .two-cols, .more-cols, .three-cols, #images {
+    #main-nav, #main-nav ul, .main-content, .center-cols, .center-cols, .center-cols-nested, .nested-cols, #images {
         display: flex;
     }
 
-    #main-nav ul, .main-content section, #main-nav ul li, .two-cols section, .more-cols section, .three-cols section, #images img {
+    #main-nav ul, .main-content section, #main-nav ul li, .center-cols section, .center-cols-nested section, .nested-cols section, #images img {
         flex:1;
     }
 
@@ -140,6 +151,5 @@ body {
     #main-footer h4 {
         text-align: end;
     }
-
-
+    /* End of Desktop display */
 }

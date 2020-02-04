@@ -6,29 +6,98 @@
         <script src="script.js"></script>
         <title>CSCE 242 - alecfarmer</title>
     </head>
+
+
     <body>
-        <!-- Main div of page -->
-        <div id="content">
-            <h1>CSCE 242 - Spring 2020</h1>
-            <h5>James (Alec) Farmer</h5>
-            <p>This class will better my skills in creating client and server based websites using HTML, CSS, and JavaScript.</p>
-            <h2>Assignments</h2>
-            <!-- Unordered list to display links to different pages (assignments) -->
-            <ul id="list-assign">
-                <li><a href="csce242/assignments/a1/index.html">Assingment 1</a></li>
-                <li><a href="csce242/assignments/a2/index.html">Assingment 2</a></li>
-                <li><a href="csce242/assignments/a3/index.html">Assingment 3</a></li>
-            </ul>
-            <h2>In-Class Exercises</h2>
-            <!-- Unordered list to display links to different pages (in-class assignments) -->
-            <ul id="list-inclass">
-                <li><a href="csce242/inclass/jan14/index.html">Jan 14</a></li>
-                <li><a href="csce242/inclass/jan16/index.html">Jan 16</a></li>
-                <li><a href="csce242/inclass/jan21/index.html">Jan 21</a></li>
-                <li><a href="csce242/inclass/jan23/index.html">Jan 23</a></li>
-                <li><a href="csce242/inclass/jan28/index.html">Jan 28</a></li>
-                <li><a href="csce242/inclass/jan30/index.html">Jan 30</a></li>
-            </ul>
+        <div class="page-contents">
+
+
+            <header id="main-header">
+                <section id="main-header-name">
+                    <h4>James Farmer</h4>
+                </section>
+
+                <section id="main-header-title">
+                    <h1>CSCE 242: Client-Server Computing</h1>
+                </section>
+            </header>
+
+
+            <div class="main-content">
+                <h2>Assignments</h2>
+                <div id="assignment-cols">
+                    <a href="csce242/assignments/a1/index.html">
+                        <section class="assign-sep">
+                            <h2>Assignment 1 - Basic HTML</h2>
+                            <img src="images/a1pic.png">
+                            <div id="para">
+                                <p>Focued on basic HTML including title, headings, paragraphs, lists, images, and hrefs.</p>
+                            </div>
+                        </section>
+                    </a>
+
+                    <a href="csce242/assignments/a2/index.html">
+                        <section class="assign-sep">
+                            <h2>Assignment 2 - Basic CSS</h2>
+                            <img src="images/a2pic.png">
+                            <div id="para">
+                                <p>Focused on styling using borders, hover aspect, font size, font color, list style, and list color.</p>
+                            </div>
+                        </section>
+                    </a>
+
+                    <a href="csce242/assignments/a3/index.html">
+                        <section class="assign-sep">
+                            <h2>Assignment 3 - Page Layout</h2>
+                            <img src="images/a3pic.png">
+                            <div id="para">
+                                <p>Focused on the layout of the page which included flex, align-content, nested divs, and sections.</p>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+            </div>
+
+
+            <footer id="main-footer">
+
+
+                <div id="footer-content">
+                
+                
+                    <section id="special">
+                        <h2>In Class Exercises</h2>
+                    </section>
+
+                    <section>
+                        <div class="footer-list-div">
+                            <ul id="inclass-list-1">
+                                <li><a href="csce242/inclass/jan14/index.html">Exercise name - 01/14/2020</a></li>
+                                <li><a href="csce242/inclass/jan16/index.html">Exercise name - 01/16/2020</a></li>
+                                <li><a href="csce242/inclass/jan21/index.html">Exercise name - 01/21/2020</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-list-div">
+                            <ul id="inclass-list-2">
+                                <li><a href="csce242/inclass/jan23/index.html">Exercise name - 01/23/2020</a></li>
+                                <li><a href="csce242/inclass/jan28/index.html">Exercise name - 01/28/2020</a></li>
+                                <li><a href="csce242/inclass/jan30/index.html">Exercise name - 01/30/2020</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-list-div">
+                            <ul id="inclass-list-3">
+                                <li><a href="csce242/inclass/feb04/index.html">Exercise name - 02/04/2020</a></li>
+                                <li><a href="#">Exercise name - 02/06/2020</a></li>
+                                <li><a href="#">Exercise name - 02/11/2020</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </footer>
+
+
         </div>
     </body>
 </html>

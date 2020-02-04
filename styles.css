@@ -3,51 +3,105 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Body of webpage : for site background */
 body {
     background-image: url(sitebackground.png);
-    text-decoration: none;
     margin: 5%;
+    margin-top: 0;
+    padding: 0px;
 }
 
-/* Main div */
-#content {
+#main-header, #assignment-cols, .assign-sep, .assign-sep img, #main-footer, .footer-list-div {
+    padding: 10px;
+    margin: 5px;
+}
+
+#assignment-cols section {
     background: rgba(124, 145, 194, 0.9);
-    padding: 20px;
-    width: 65%;
-    margin: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
+    margin: 20px;
 }
 
-/* Styles for heading 1,2,5, and paragraphs */
-h1, h2, h5, p {
-    color: whitesmoke;
-}
-
-/* Centering the text for heading 1,5, and paragraph */
-h1, h5, p {
-    text-align: center;
-}
-
-/* Assigning bullet style to assignment's list */
-li {
-    list-style-type: circle;
-}
-
-/* Link styles */
-a {
+#assignment-cols a, .footer-list-div a {
     text-decoration: none;
-    font-size: 18px;
-    padding: 0px 5px;
-    color: #FFD000;
-    border-bottom: 2px solid transparent;
+    color: black;
 }
 
-/* Link hover atributes */
-a:hover {
+.footer-list-div a:hover {
     border-bottom: 2px solid white;
 }
+
+#main-footer {
+    background: rgba(124, 145, 194, 0.9);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
+    justify-content: space-around;
+}
+
+#special {
+    justify-content: center;
+}
+
+#main-footer ul {
+    font-size: larger;
+    padding: 0px;
+}
+
+#main-header section h4 {
+    text-decoration: solid firebrick;
+}
+
+/* Headers */
+h1, h2, h4, h3, h5, p {
+    text-align: center;
+    color:white;
+    padding: 0px;
+}
+
+#main-header {
+    padding: 0px;
+}
+
+#main-header-name {
+    text-align-last: left;
+}
+
+@media(min-width:900px) {
+    #assignment-cols, #assignment-cols, #main-footer, #footer-content section, .footer-list-div {
+        display: flex;
+    }
+
+    .assign-section, #footer-content section, #footer-content section, .footer-list-div {
+        flex: 1;
+    }
+
+    #assignment-cols {
+        justify-content: space-evenly;
+    }
+
+    #assignment-cols section {
+        transition: 1s ease;
+    }
+
+    #assignment-cols section:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 1s ease;
+    }
+
+    #footer-content ul {
+        display: flexbox;
+        flex:2;
+    }
+
+    #footer-content {
+        flex: 2;
+    }
+    
+}
+
+
 
 
 /* Color pallet
