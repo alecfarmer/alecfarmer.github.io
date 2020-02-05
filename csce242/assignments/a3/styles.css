@@ -131,8 +131,9 @@ body {
         flex:1;
     }
 
-    .assign-sep img {
+    .picture {
         display: block;
+        justify-content: center;
     }
 
     .assign-sep {
