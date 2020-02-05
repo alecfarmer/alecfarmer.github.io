@@ -127,7 +127,7 @@ body {
         display: flex;
     }
 
-    #main-nav ul, .main-content section, #main-nav ul li, .center-cols section, .center-cols-nested section, .nested-cols section, #images img {
+    #main-nav ul, .main-content section, #main-nav ul li, .center-cols-nested, .center-cols section, .center-cols-nested section, .nested-cols section, #images img {
         flex:1;
     }
 

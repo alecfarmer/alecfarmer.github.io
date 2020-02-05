@@ -24,7 +24,10 @@ body {
 
 #assignment-cols a {
     text-decoration: none;
-    color: black;
+}
+
+#assignmenr-cols a {
+    background: red;
 }
 
 .footer-list-div li {
@@ -78,16 +81,12 @@ h1, h2, h4, h3, h5, p {
 }
 
 @media(min-width:900px) {
-    #assignment-cols, #assignment-cols, #main-footer, #footer-content section, .footer-list-div {
+    #assignment-cols, #main-footer, #footer-content section, .footer-list-div {
         display: flex;
     }
 
     .assign-section, #footer-content section, #footer-content section, .footer-list-div {
         flex: 1;
-    }
-
-    #assignment-cols {
-        justify-content: space-evenly;
     }
 
     #assignment-cols section {
