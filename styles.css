@@ -82,8 +82,16 @@ h1, h2, h4, h3, h5, p {
 }
 
 @media(min-width:900px) {
-    #assignment-cols, #main-footer, #footer-content section, .footer-list-div {
+    #assignment-cols, #main-footer, #footer-content section, .footer-list-div, .assign-sep {
         display: flex;
+    }
+
+    .assign-sep {
+        justify-content: center;
+    }
+
+    .picture {
+        display: block;
     }
 
     .assign-section, #footer-content section, #footer-content section, .footer-list-div {
