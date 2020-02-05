@@ -123,21 +123,12 @@ body {
 
 /* Desktop display */
 @media(min-width:900px) {
-    #main-nav, #main-nav ul, .main-content, .center-cols, .center-cols, .center-cols-nested, .nested-cols, #images, .assign-sep {
+    #main-nav, #main-nav ul, .main-content, .center-cols, .center-cols, .center-cols-nested, .nested-cols, #images {
         display: flex;
     }
 
     #main-nav ul, .main-content section, #main-nav ul li, .center-cols-nested, .center-cols section, .center-cols-nested section, .nested-cols section, #images img {
         flex:1;
-    }
-
-    .picture {
-        display: block;
-        justify-content: center;
-    }
-
-    .assign-sep {
-        justify-content: center;
     }
 
     #man-nav li {
