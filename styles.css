@@ -16,7 +16,8 @@ body {
 }
 
 #assignment-cols section {
-    background: rgba(124, 145, 194, 0.9);
+    /*background: rgba(124, 145, 194, 0.9);*/
+    background: red;
     border-radius: 20px;
     box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
     margin: 20px;
