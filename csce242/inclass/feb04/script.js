@@ -16,28 +16,21 @@ function showGirl() {
     let item3  = document.getElementById("item-3").innerHTML = ("Stuff");
 }
 
-function showSmile() {
-    let faceDiv = document.getElementById("face-div").innerHTML = ("&#128533;");
+function changeEmoji() {
+    let emoji = document.getElementById("emoji");
+    if(emoji.innerHTML == "😀") {
+        emoji.innerHTML = ("😁")
+    } else if (emoji.innerHTML == "😁") {
+        emoji.innerHTML = "😅";
+    } else if (emoji.innerHTML == "😅") {
+        emoji.innerHTML = "😂";
+    } else if (emoji.innerHTML == "😂") {
+        emoji.innerHTML = ("😀")
+    }
 }
 
-function showFrown() {
-    let faceDiv = document.getElementById("face-div").innerHTML = ("&#128512;");
-}
-
-function loopArray() {
-    list = ["&#128512;","&#128513;","&#128518","&#128514"];
-    list.forEach (element => {
-        document.querySelector('#face-div').innerHTML = element;
-        
-    });
-
-    /*
-        smile has four different states & cycle though
-    */
-}
-
-let buttonDiv = document.getElementById("face-div");
-buttonDiv.onclick = loopArray;
+let buttonEmoji = document.getElementById("button-emoji");
+buttonEmoji.onclick = changeEmoji;
 
 let buttonBoy = document.getElementById("button-boy");
 buttonBoy.onclick = showBoy;

@@ -1,0 +1,77 @@
+body {
+    background: #a95e5e;
+}
+
+.input-paras {
+    background: #3498FF;
+    padding:10px;
+    margin:10% auto;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.input-paras h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+#tax {
+    display: block;
+    text-indent: 18%;
+}
+
+.input-paras label {
+    width: 100px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+.input-paras input {
+    display: block;
+    width: 100px;
+    padding: 5px;
+}
+
+.input-paras input:focus {
+    background: rgba(137, 68, 158, 0.712);
+    color: #ffffff;
+}
+
+.input-paras button {
+    width: 100%;
+    padding: 5px;
+}
+
+#result {
+    font-weight: bold;
+}
+
+@media(min-width:900px) {
+    #content {
+        display: flex;
+    }
+
+    .input-paras p {
+        display: flex;
+        padding-left: 25px;
+    }
+
+    .input-paras label {
+        width: 100px;
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .input-paras input {
+        width: 40%;
+    }
+
+    .input-paras button {
+        width: 40%;
+        display: block;
+        margin: auto;
+        padding: 5px;
+        font-size: 15px;
+    }
+}

@@ -12,10 +12,16 @@ body {
     margin: 5px;
 }
 
+#assignment-cols {
+    overflow: scroll;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
 #assignment-cols section {
     background: rgba(124, 145, 194, 0.9);
     border-radius: 20px;
-    box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
+    box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
     margin: 20px;
 }
 
@@ -52,10 +58,6 @@ body {
 #main-footer ul {
     font-size: larger;
     padding: 0px;
-}
-
-#main-header section h4 {
-    text-decoration: solid firebrick;
 }
 
 /* Headers */
