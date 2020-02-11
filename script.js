@@ -1,4 +1,5 @@
 window.onload = function() {
+  // Begin particle.js script (background)
   Particles.init({
     selector: '.background',
     color: '#75A5B7',
@@ -18,4 +19,5 @@ window.onload = function() {
       }
     ]
   });
+  // End particle.js script
 };
