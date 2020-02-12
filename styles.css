@@ -17,8 +17,26 @@ body {
     border-radius: 10px;
 }
 
+#assignment-cols::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+#assignment-cols::-webkit-scrollbar:vertical {
+    display: none;
+}
+
+#assignment-cols::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+#assignment-cols::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid #7c91c2e6;
+    background-color: transparent;
+}
+
 #assignment-cols section {
-    background: rgba(124, 145, 194, 0.9);
+    background: #7c91c2e6;
     border-radius: 20px;
     box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
     margin: 20px;
