@@ -1,0 +1,71 @@
+body {
+    background: slategray;
+}
+
+.artist-content {
+    background: white;
+    padding:30px;
+    margin:auto;
+    margin-top: 15%;
+    border-radius: 10px;
+}
+
+.artist-content h2 {
+    text-align: center;
+}
+
+.artist-content label {
+    width: 40px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+.artist-content input {
+    display: block;
+    width: 100px;
+    padding: 5px;
+}
+
+.artist-content input:focus {
+    background: skyblue;
+    color: magenta;
+}
+
+.artist-content button {
+    width: 100%;
+    padding: 5px;
+}
+
+.error {
+    color:red;
+}
+
+.hidden {
+    display:none;
+}
+
+@media(min-width:900px) {
+    #content {
+        display: flex;
+    }
+
+    .artist-content p {
+        display: flex;
+    }
+
+    .artist-content label {
+        text-align: left;
+    }
+
+    .artist-content input {
+        width: 50%;
+        margin: 0;
+    }
+
+    .artist-content button {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+}
