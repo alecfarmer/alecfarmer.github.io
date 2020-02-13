@@ -15,6 +15,7 @@ body {
     overflow: scroll;
     overflow-y: none;
     border-radius: 10px;
+    flex-direction: row-reverse;
 }
 
 #assignment-cols::-webkit-scrollbar {
@@ -31,8 +32,8 @@ body {
 
 #assignment-cols::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    border: 2px solid #989699;
-    background-color: #989699;
+    border: 2px solid #989699b0;
+    background-color: #989699b0;
 }
 
 #assignment-cols section {

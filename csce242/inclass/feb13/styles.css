@@ -79,12 +79,24 @@ body {
     padding-left:0;
 }
 
+#main-nav a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+#main-nav li {
+    background: #abc;
+    padding: 10px;
+    margin: 5px 0;
+}
+
 /* Nav Bar Toggle */
 #nav-toggle div {
     width: 35px;
     height: 5px;
     background-color:black;
-    margin:6px 0;
+    margin: 2px 0;
 }
 
 /* Large Resolutions */
@@ -111,6 +123,27 @@ body {
         width:50%;
         display:block;
         margin:auto;
+    }
+
+    /* Navigation */
+    #nav-toggle {
+        display: none;
+    }
+
+    #main-nav ul {
+        display: flex;
+    }
+
+    #main-nav a {
+        border-bottom: 2px solid transparent;
+    }
+
+    #main-nav a:hover {
+        border-bottom: 2px solid white;
+    }
+
+    #main-nav li {
+        background: transparent;
     }
 
 }

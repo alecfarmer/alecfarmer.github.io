@@ -1,0 +1,71 @@
+body {
+    background: slategray;
+}
+
+.example {
+    background: white;
+    padding:10px;
+    margin:10px;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.example h2 {
+    text-align: center;
+}
+
+.example label {
+    width: 100px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+.example input {
+    display: block;
+    width: 100px;
+    padding: 5px;
+}
+
+.example input:focus {
+    background: skyblue;
+    color: magenta;
+}
+
+.example button {
+    width: 100%;
+    padding: 5px;
+}
+
+#nav-toggle div {
+    width: 35px;
+    height: 5px;
+    background-color:black;
+    margin: 2px 0;
+}
+
+@media(min-width:900px) {
+    #content {
+        display: flex;
+    }
+
+    .example p {
+        display: flex;
+    }
+
+    .example label {
+        width: 100px;
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .example input {
+        width: 50%;
+    }
+
+    .example button {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+}
