@@ -1,31 +1,79 @@
 <!DOCTYPE html>
+<!-- James (Alec) Farmer - CSCE 242-001 -->
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <title></title>
+        <title>JavaScript Examples</title>
     </head>
     <body>
-        <div id="content">
-            <h1>If Statement Assignment</h1>
+        <header id="main-header">
+            <h1>JavaScript Examples</h1>
             <nav id="main-nav">
                 <div id="nav-toggle">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <ul id="main-nav-items">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Bio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="hidden" id="main-nav-items">
+                    <li><a href="#">Exercise 1</a></li>
+                    <li><a href="#">Exercise 2</a></li>
                 </ul>
             </nav>
-            <section class="example">
-                <h2>Example 1</h2>
+        </header>
+        <div id="content">
+            <section class="content-sects">
+                <h1>Who's the Oldest</h1>
+                <div id="shift">
+                    <p>
+                        <label for="txt-first-name">Name 1: </label>
+                        <input id="txt-first-name">
+                        <span id="error-first-name" class="error hidden">* blank</span>
+                    </p>
+                    <p>
+                        <label for="txt-first-age">Age 1: </label>
+                        <input id="txt-first-age">
+                        <span id="error-first-age" class="error hidden">* blank</span>
+                    </p>
+                    <p>
+                        <label for="txt-second-name">Name 2: </label>
+                        <input id="txt-second-name">
+                        <span id="error-second-name" class="error hidden">* blank</span>
+                    </p>
+                    <p>
+                        <label for="txt-second-age">Age 2: </label>
+                        <input id="txt-second-age">
+                        <span id="error-second-age" class="error hidden">* blank</span>
+                    </p>
+                    <p>
+                        <label for="txt-third-name">Name 3: </label>
+                        <input id="txt-third-name">
+                        <span id="error-third-name" class="error hidden">* blank</span>
+                    </p>
+                    <p>
+                        <label for="txt-third-age">Age 3: </label>
+                        <input id="txt-third-age">
+                        <span id="error-third-age" class="error hidden">* blank</span>
+                    </p>
+                    <button id="btn-compare">Compare Ages</button>
+                </div>
+
+                <p id="sorted-result"></p>
             </section>
-            <section class="example">
-                <h2>Example 2</h2>
+            <section>
+                <div id="space-between"></div>
+            </section>
+            <section class="content-sects">
+                <h1>Fund Raising</h1>
+                <h4>Goal 10,000.00</h2>
+                <p>
+                    <label id="fund-label" for="txt-fund-total">Funds Raised</label>
+                    <input id="txt-fund-total">
+                    <button id="btn-calculate">Display</button>
+                    <span id="error-fund-total" class="error hidden">* blank</span>
+                </p>
+                <div class="" id="display-total">
+
+                </div>
             </section>
         </div>
         <script src="script.js"></script>

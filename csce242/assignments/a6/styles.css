@@ -1,42 +1,99 @@
 body {
-    background: slategray;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#344d7e;
+    margin: 0;
 }
 
-.example {
-    background: white;
-    padding:10px;
-    margin:10px;
-    flex: 1;
-    border-radius: 10px;
+.content-sects {
+    background:#3ca2b9;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 1px;
 }
 
-.example h2 {
+.content-sects p {
+    padding: 0;
+    margin: 5px;
+}
+
+.content-sects h1 {
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+}
+
+.content-sects h4 {
+    margin: 1px;
+    padding: 5px;
+}
+
+#space-between {
+    margin: 50px;
+}
+
+#shift {
+    padding-left: 20px;
+}
+
+.content-sects label {
+    width: 70px;
+    display: inline-block;
+    text-align: right;
+    padding: 5px;
+    margin: 0px;
+}
+
+.content-sects input {
+    width: 150px;
+    display: inline-flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.content-sects input:focus {
+    background:skyblue;
+    color:rgb(7, 7, 7);
+}
+
+.content-sects button {
+    width: 90px;
+    padding: 5px;
+    margin: 0;
+}
+
+.error {
+    color:red;
+}
+
+.hidden {
+    display:none;
+}
+
+#main-header h1 {
+    text-align:center;
+    color:#fff;
+}
+ 
+/* Nav Bar */
+#main-nav ul {
+    list-style-type: none;
+    padding-left:0;
     text-align: center;
 }
 
-.example label {
-    width: 100px;
-    display: block;
-    text-align: center;
-    padding: 5px;
+#main-nav a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 
-.example input {
-    display: block;
-    width: 100px;
-    padding: 5px;
+#main-nav li {
+    background: #278ea5;
+    padding: 10px;
+    margin: 1px 0;
 }
 
-.example input:focus {
-    background: skyblue;
-    color: magenta;
-}
-
-.example button {
-    width: 100%;
-    padding: 5px;
-}
-
+/* Nav Bar Toggle */
 #nav-toggle div {
     width: 35px;
     height: 5px;
@@ -44,28 +101,80 @@ body {
     margin: 2px 0;
 }
 
-@media(min-width:900px) {
+/* Fund Raising Start */
+.full {
+    background: #ffcdab;
+    background: linear-gradient(0deg, #ffcdab 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+}
+
+.two-thirds-way {
+    background: #ffcdab;
+    background: linear-gradient(0deg, #ffcdab 75%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+}
+
+.half-way {
+    background: #ffcdab;
+    background: linear-gradient(0deg, #ffcdab 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.third-way {
+    background: #ffcdab;
+    background: linear-gradient(0deg, #ffcdab 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+}
+
+#display-total {
+    width: 60px;
+    height: 300px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+#fund-label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    
+}
+
+/* Large Resolutions */
+@media(min-width:900px){
+    
+    /* Navigation */
+    #nav-toggle {
+        display: none;
+    }
+
+    #main-nav-items {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #main-nav-items li {
+        flex:1;
+        border-bottom: 5px solid transparent;
+        pointer-events: all;
+    }
+
+    #main-nav-items li:hover {
+        border-bottom: 5px solid white;
+    }
+
+    /* End Navigation */
+
+    /* Main Content */
     #content {
-        display: flex;
+        display: flexbox;
     }
 
-    .example p {
-        display: flex;
+    .content-sects {
+        flex: 1;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 20px;
     }
 
-    .example label {
-        width: 100px;
-        text-align: right;
-        padding-right: 5px;
-    }
 
-    .example input {
-        width: 50%;
-    }
 
-    .example button {
-        width: 50%;
-        display: block;
-        margin: auto;
-    }
 }
