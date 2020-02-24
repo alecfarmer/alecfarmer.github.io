@@ -1,0 +1,119 @@
+/* CSS Document */
+body {
+	background: #150F19;
+    margin: 5%;
+    margin-top: 0;
+    padding: 0px;
+}
+
+#main-header-name, #main-header-title {
+	text-align: center;
+	color: white;
+}
+
+#main-content-title {
+	text-align: center;
+	color: white;
+}
+
+#assignment-cols section {
+	background: #7c91c2e6;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
+    margin: 10px;
+	padding: 10px;
+}
+
+#assignment-cols a {
+    text-decoration: none;
+	color: white;
+	text-align: center
+}
+
+#footer-content {
+	background: #7c91c2e6;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
+	margin: 10px;
+	padding: 10px;
+}
+
+#special {
+	color: white;
+	text-align: center;
+}
+
+#footer-content {
+	display: flex;
+	flex-flow: column;
+}
+
+.footer-list-div ul {
+	list-style-type: none;
+}
+
+.footer-list-div li {
+	text-decoration: none;
+}
+
+.footer-list-div a {
+	text-decoration: none;
+	color: yellow;
+}
+
+/* Larger Screens */
+@media(min-width:900px) {
+	.page-contents {
+		margin: 30px
+	}
+    
+    #assignment-cols, #main-footer, #footer-content section {
+        display: flex;
+    }
+    
+    .assign-section, #footer-content section, #footer-content section, .footer-list-div, #footer-content {
+        flex: 1;
+    }
+	
+	#main-header-name {
+		text-align: start
+	}
+	
+	#assignment-cols {
+		display: flex;
+        overflow: scroll;
+		overflow-y: hidden;
+		overflow-x: visible;
+        border-radius: 10px;
+	}
+    
+    /* Hover Effects for assignment-cols */
+    #assignment-cols::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    #assignment-cols::-webkit-scrollbar:vertical {
+        display: none;
+    }
+
+    #assignment-cols::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+
+    #assignment-cols::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 2px solid #989699b0;
+        background-color: #989699b0;
+    }
+    
+    #assignment-cols section {
+        transition: 1s ease;
+    }
+
+    #assignment-cols section:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 1s ease;
+    }
+}
