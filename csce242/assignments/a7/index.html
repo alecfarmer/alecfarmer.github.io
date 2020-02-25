@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- James (Alec) Farmer - CSCE 242-001 -->
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>JavaScript Examples</title>
+    </head>
+    <body>
+        <div id="content">
+            <section class="content-sects" id="shrink">
+                <h1>Running Man</h1>
+                <div id="shift">
+                    <img class="running-man" id="moving-pic" src="/csce242/assignments/a7/images/walking_man.png" width="50px" height="80px">
+                </div>
+            </section>
+            <section class="content-sects">
+                <h1>Fund Raising</h1>
+                <h4>Goal 10,000.00</h2>
+                <p>
+                    <label id="fund-label" for="txt-fund-total">Funds Raised</label>
+                    <input id="txt-fund-total">
+                    <button id="btn-calculate">Display</button>
+                    <span id="error-fund-total" class="error hidden">* blank</span>
+                </p>
+                <div class="auto-fill" id="display-total">
+
+                </div>
+            </section>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

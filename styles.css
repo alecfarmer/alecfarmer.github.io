@@ -1,101 +1,71 @@
+/* CSS Document */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #150F19;
-    margin: 5%;
+    /*background:#223C74;*/
+    background: #1C1D22;
     margin-top: 0;
     padding: 0px;
+    margin: 0;
 }
 
-#main-header, #assignment-cols, .assign-sep, .assign-sep img, #main-footer, .footer-list-div {
-    padding: 10px;
-    margin: 5px;
-}
-/* Begin Main Content */
-#assignment-cols {
-    overflow: scroll;
-    overflow-y: none;
-    border-radius: 10px;
-    flex-direction: row-reverse;
+#main-header-name, #main-header-title {
+	text-align: center;
+	color: #ECECEC;
 }
 
-#assignment-cols::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-#assignment-cols::-webkit-scrollbar:vertical {
-    display: none;
-}
-
-#assignment-cols::-webkit-scrollbar:horizontal {
-    height: 10px;
-}
-
-#assignment-cols::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    border: 2px solid #989699b0;
-    background-color: #989699b0;
+#main-content-title {
+	text-align: center;
+	color: #ECECEC;
 }
 
 #assignment-cols section {
-    background: #7c91c2e6;
+	background:#383d45ea;
     border-radius: 20px;
     box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
-    margin: 20px;
+    margin: 10px;
+	padding: 10px;
 }
 
 #assignment-cols a {
     text-decoration: none;
-}
-/* End Main Content */
-
-/* Begin Footer */
-.footer-list-div li {
-    list-style-type: circle;
+	color: #4893F1;
+	text-align: center
 }
 
-.footer-list-div a {
-    text-decoration: none;
-    color: #FFD000;
-    padding: 0px 5px;
-    font-size: 18px;
-}
-
-.footer-list-div a:hover {
-    border-bottom: 2px solid white;
-}
-
-#main-footer {
-    background: rgba(124, 145, 194, 0.9);
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px 5px rgba(98, 116, 158, 0.603);
-    justify-content: space-around;
+#footer-content {
+	background:#383d45ea;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
+	margin: 10px;
+	padding: 10px;
 }
 
 #special {
-    justify-content: center;
+	color: #ECECEC;
+	text-align: center;
 }
 
-#main-footer ul {
-    font-size: larger;
-    padding: 0px;
+#footer-content {
+	display: flex;
+	flex-flow: column;
 }
-/* End Footer */
 
-/* Headers */
-h1, h2, h4, h3, h5, p {
+.footer-list-div ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list-div li {
+	text-decoration: none;
+}
+
+.footer-list-div a {
+	text-decoration: none;
+	color: #4893F1;
+}
+
+#inclass-list-1, #inclass-list-2, #inclass-list-3 {
     text-align: center;
-    color:white;
-    padding: 0px;
 }
-
-#main-header {
-    padding: 0px;
-}
-
-#main-header-name {
-    text-align-last: left;
-}
-/* End Headers */
 
 .background {
     position: absolute;
@@ -106,46 +76,108 @@ h1, h2, h4, h3, h5, p {
     z-index: -1;
 }
 
-/* Only applies to screens < 900px */
+/* Larger Screens */
 @media(min-width:900px) {
-    #assignment-cols, #main-footer, #footer-content section, .footer-list-div, .picture-div {
+
+	.page-contents {
+		margin: 30px
+	}
+    
+    #assignment-cols, #main-footer, #footer-content section {
         display: flex;
     }
-
+    
     .assign-section, #footer-content section, #footer-content section, .footer-list-div, #footer-content {
         flex: 1;
     }
+	
+	#main-header-name {
+		text-align: start
+	}
+	
+	#assignment-cols {
+		display: flex;
+        overflow: scroll;
+		overflow-y: hidden;
+        overflow-x: visible;
+        border-radius: 10px;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .picture-div {
+        padding: 10px;
+    }
+    
+    /* Hover Effects for assignment-cols */
+    #assignment-cols::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
 
-    /* Hover transition for assignment sections */
+    #assignment-cols::-webkit-scrollbar:vertical {
+        display: none;
+    }
+
+    #assignment-cols::-webkit-scrollbar:horizontal {
+        height: 5px;
+    }
+
+    #assignment-cols::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: #14C550b0;
+    }
+    
     #assignment-cols section {
         transition: 1s ease;
+        height: 90%;
+    }
+
+    #assignment-cols a {
+        overflow: visible;
     }
 
     #assignment-cols section:hover {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
-        transition: 1s ease;
+        transition: 1.5s ease;
     }
-    /* End hover transition */
 
-    /* Extra content for assignment-cols pictures and footer content */
-    .picture-div {
+    #special {
         justify-content: center;
     }
 
-    #footer-content ul {
-        display: flexbox;
-        flex:2;
+    .footer-list-div ul {
+        list-style-type: circle;
+        color: #4893F1;
     }
 
-    #footer-content {
-        flex: 2;
+    .footer-list-div li {
+        padding: 2px;
     }
-    /* End extra content */
+
+    .footer-list-div li:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 1s ease;
+    }
+
+    .footer-list-div a:hover {
+        border-bottom: 1px solid white;
+    }
+
+    #inclass-list-1, #inclass-list-2, #inclass-list-3 {
+        text-align: left;
+    }
+
+    .footer-list-div {
+        display: inline-flex;
+        justify-content: center;
+    }
 }
-
-
 
 
 /* Color pallet

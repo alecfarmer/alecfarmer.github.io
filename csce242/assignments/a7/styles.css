@@ -1,0 +1,121 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background:#344d7e;
+    margin: 0;
+}
+
+.content-sects {
+    background:#3ca2b9;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.content-sects p {
+    padding: 0;
+    margin: 5px;
+}
+
+.content-sects h1 {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
+.content-sects h4 {
+    margin: 1px;
+    padding: 5px;
+}
+
+#shift {
+    padding: 20px;
+}
+
+#shrink {
+    height:20%;
+}
+
+.content-sects label {
+    width: 70px;
+    display: inline-block;
+    text-align: right;
+    padding: 5px;
+    margin: 0px;
+}
+
+.content-sects input {
+    width: 150px;
+    display: inline-flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.content-sects input:focus {
+    background:skyblue;
+    color:rgb(7, 7, 7);
+}
+
+.content-sects button {
+    width: 90px;
+    padding: 5px;
+    margin: 0;
+}
+
+.error {
+    color:red;
+}
+
+.hidden {
+    display:none;
+}
+
+/* Filling class for JS fund bar */
+.auto-fill {
+
+    /* Declare variable */
+    --filling: 0%;
+    /**/
+    background: #ffcdab;
+    background: linear-gradient(0deg, #ffcdab var(--filling), rgba(255,255,255,1) var(--filling), rgba(255,255,255,1) 100%);
+}
+
+.running-man {
+    --moving: 0px;
+    margin-left: var(--moving);
+}
+
+#display-total {
+    width: 60px;
+    height: 300px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+#fund-label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    
+}
+
+/* Large Resolutions */
+@media(min-width:900px) {
+
+    /* Main Content */
+    #content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .content-sects {
+        width: 50%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #shrink {
+        margin-top: 15%;
+    }
+}
