@@ -22,6 +22,8 @@ body {
     border-radius: 20px;
     box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
     margin: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
 	padding: 10px;
 }
 
@@ -35,8 +37,10 @@ body {
 	background:#383d45ea;
 	border-radius: 20px;
 	box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
-	margin: 10px;
-	padding: 10px;
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
 }
 
 #special {
@@ -147,6 +151,14 @@ body {
 
     #special {
         justify-content: center;
+    }
+
+    #footer-content {
+        background:#383d45ea;
+        border-radius: 20px;
+        box-shadow: 0px 0px 15px 5px rgba(98, 116, 158, 0.603);
+        margin: 10px;
+        padding: 10px;
     }
 
     .footer-list-div ul {

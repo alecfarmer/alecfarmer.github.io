@@ -1,11 +1,11 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
-    background:#344d7e;
+    background:#313272;
     margin: 0;
 }
 
 .content-sects {
-    background:#3ca2b9;
+    background:#8cecff;
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
@@ -79,8 +79,13 @@ body {
     background: linear-gradient(0deg, #ffcdab var(--filling), rgba(255,255,255,1) var(--filling), rgba(255,255,255,1) 100%);
 }
 
-.running-man {
+.walking-man {
     --moving: 0px;
+    margin-left: var(--moving);
+}
+
+.running-man {
+    --moving: 100px;
     margin-left: var(--moving);
 }
 
