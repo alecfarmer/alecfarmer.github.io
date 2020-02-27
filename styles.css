@@ -1,12 +1,12 @@
 /* CSS Document */
 body {
-    /*background:#223C74;*/
     background: #1C1D22;
     margin-top: 0;
     padding: 0px;
     margin: 0;
 }
 
+/* Begin Header */
 #main-header-name, #main-header-title {
 	text-align: center;
 	color: #ECECEC;
@@ -16,7 +16,9 @@ body {
 	text-align: center;
 	color: #ECECEC;
 }
+/* End Header */
 
+/* Begin Main Content */
 #assignment-cols section {
 	background:#383d45ea;
     border-radius: 20px;
@@ -32,7 +34,9 @@ body {
 	color: #4893F1;
 	text-align: center
 }
+/* End Main Content */
 
+/* Begin Footer */
 #footer-content {
 	background:#383d45ea;
 	border-radius: 20px;
@@ -79,6 +83,7 @@ body {
     right: 0;
     z-index: -1;
 }
+/* End Footer */
 
 /* Larger Screens */
 @media(min-width:900px) {
@@ -87,6 +92,7 @@ body {
 		margin: 30px
 	}
     
+    /* Begin Flexing */
     #assignment-cols, #main-footer, #footer-content section {
         display: flex;
     }
@@ -94,11 +100,15 @@ body {
     .assign-section, #footer-content section, #footer-content section, .footer-list-div, #footer-content {
         flex: 1;
     }
-	
+    /* End Flexing */
+    
+    /* Begin Header */
 	#main-header-name {
 		text-align: start
-	}
-	
+    }
+    /* End Header */
+    
+    /* Begin Main Content */
 	#assignment-cols {
 		display: flex;
         overflow: scroll;
@@ -148,7 +158,10 @@ body {
         transform: scale(1.1);
         transition: 1.5s ease;
     }
+    /* End Effects */
+    /* End Main Content */
 
+    /* Begin Footer */
     #special {
         justify-content: center;
     }
@@ -170,6 +183,7 @@ body {
         padding: 2px;
     }
 
+    /* Begin Footer Hover Effects */
     .footer-list-div li:hover {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
@@ -180,6 +194,7 @@ body {
     .footer-list-div a:hover {
         border-bottom: 1px solid white;
     }
+    /* End Effects */
 
     #inclass-list-1, #inclass-list-2, #inclass-list-3 {
         text-align: left;
@@ -189,6 +204,7 @@ body {
         display: inline-flex;
         justify-content: center;
     }
+    /* End Footer */
 }
 
 
