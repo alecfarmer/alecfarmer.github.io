@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333333;
+}
+
+#content {
+    display: flexbox;
+    justify-content: center;
+    align-content: center;
+}
+
+.sect {
+    background: #3399FF;
+    width: 600px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 20px;
+    height: 235px;
+}
+
+.title {
+    padding-bottom: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+#quotes {
+    margin: 0px;
+}
+
+#btn-draw-rainbow {
+    background: #333333;
+    border-color: #333333;
+    border-radius: 4px;
+    color: #3399FF;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+.redBar {
+    width: 100%;
+    height: 25px;
+    background: red;
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+.orangeBar {
+    width: 100%;
+    height: 25px;
+    background: orange;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.yellowBar {
+    width: 100%;
+    height: 25px;
+    background: yellow;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.greenBar {
+    width: 100%;
+    height: 25px;
+    background: green;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.blueBar {
+    width: 100%;
+    height: 25px;
+    background: blue;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.purpleBar {
+    width: 100%;
+    height: 25px;
+    background: #4B0082;
+    margin-top: 0px;
+}
+
+#pog {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left: 500px;
+}
+
+.pog {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+@media(min-width:900px) {
+    #content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sect {
+        width: 100%;
+        margin: 20px;
+    }
+
+    #pog {
+        margin-left: 450px;
+    }
+}

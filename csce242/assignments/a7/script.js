@@ -23,7 +23,7 @@ function fundBar() {
 function walkMan() {
     const movePic = document.getElementById("moving-pic");
     const runPic = document.getElementById("running-pic");
-
+    
     wMove += 2;
     movePic.style.setProperty('--moving', wMove + "px");
 
