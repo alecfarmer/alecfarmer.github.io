@@ -1,0 +1,71 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background:#3b4a6b;
+}
+
+.example {
+    background:transparent;
+    padding:10px;
+    margin:10px;
+    border-radius:5px;
+    min-height:200px;
+}
+
+#main-header h1 {
+    text-align:center;
+    color:#f0d43a;
+}
+
+.flex {
+    display: inline-flex;
+}
+
+.logo {
+    margin-left: 70px;
+    border-radius: 10px;
+}
+
+/* Large Resolutions Only */
+@media(min-width:900px){
+    #content {
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+    .largewidth {
+        width:85%;
+        margin:auto;
+    }
+
+    #breweries-section {
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+    .brewery {
+        width:30%;
+        background: #393e46;
+        padding:10px;
+        margin:10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 6px transparent;
+    }
+
+    .brewery:hover {
+        box-shadow: 0px 0px 5px 6px rgba(98, 116, 158, 0.603);
+        transition: 1s ease;
+    }
+
+    .brewery h3:hover {
+        text-decoration: underline white;
+    }
+
+    .brewery a {
+        text-decoration: none;
+        color:#f0d43a;
+    }
+
+    .brewery p {
+        color: #f23557;
+    }
+}

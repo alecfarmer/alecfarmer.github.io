@@ -131,7 +131,7 @@ body {
     }
 
     #assignment-cols::-webkit-scrollbar:vertical {
-        display: none;
+        display: 5px;
     }
 
     #assignment-cols::-webkit-scrollbar:horizontal {
