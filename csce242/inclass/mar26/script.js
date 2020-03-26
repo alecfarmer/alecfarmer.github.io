@@ -21,16 +21,7 @@ function getBreweryItem(brewery) {
     aElem.href = brewery.website_url;
     brewerySection.append(aElem);
 
-    let infoSec = document.createElement("section");
-    infoSec.classList.add("flex");
-    brewerySection.append(infoSec);
-
-    infoSec.append(getBreweryAddress(brewery));
-
-    let logo = document.createElement("img");
-    logo.src = "ABC.png";
-    logo.classList.add("logo");
-    infoSec.append(logo);
+    brewerySection.append(getBreweryAddress(brewery));
 
 
     return brewerySection;
