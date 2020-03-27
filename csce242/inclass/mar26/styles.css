@@ -17,6 +17,18 @@ body {
     color:#f0d43a;
 }
 
+/* Footer */
+#main-footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(170, 170, 170);
+}
+
+#main-footer div {
+    text-align: center;
+}
+
 /* Large Resolutions Only */
 @media(min-width:900px){
     #content {
@@ -35,12 +47,15 @@ body {
     }
 
     .brewery {
-        width: 30%;
-        background: #393e46;
+        width: 25%;
+        /*background: #393e46;*/
+        background: transparent;
         padding: 10px;
-        margin: 10px;
-        border-radius: 70px;
+        margin: auto;
+        margin-bottom: 30px;
+        border-radius: 80px;
         box-shadow: 0px 0px 5px 6px transparent;
+        border: solid 1px #d6bd322f;
     }
 
     .brewery:hover {
@@ -49,7 +64,7 @@ body {
     }
 
     .brewery h3 {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.815);
         padding-bottom: 15px;
         margin-bottom: 10px;
     }
@@ -65,7 +80,8 @@ body {
     }
 
     .brewery p {
-        color: #f23557;
+        /*color: #f23557;*/
+        color:#D16F20;
         text-align: center;
         margin-top: 0px;
     }
