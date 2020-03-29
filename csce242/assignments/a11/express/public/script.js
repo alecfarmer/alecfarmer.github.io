@@ -1,44 +1,39 @@
-async function showmovies() {
-    let response = await fetch('https://portiaportia.github.io/csce242/json/movies.json');
-    let moviesJSON = await response.json();
-    let moviesSection = document.getElementById("section");
+async function showEmployees() {
+    let response = await fetch('https://github.com/alecfarmer/alecfarmer.github.io/blob/master/csce242/json/sickness.json');
+    let employeeJSON = await response.json();
+    let employeesSection = document.getElementById("section");
     
     //loop through the movies
-    for(i in moviesJSON) {
-        let movie = moviesJSON[i];
-        moviesSection.append(getmovieItems(movie));
+    for(i in employeeJSON) {
+        let employee = employeeJSON[i];
+        employeesSection.append(getmovieItems(employee));
     }
 }
 
-function getmovieItems(movie) {
-    let movieSection = document.createElement("section");
-    movieSection.classList.add("movie");
-    movieSection.classList.add("flex");
+function getmovieItems(employee) {
+    let employeeSection = document.createElement("section");
+    employeeection.classList.add("movie");
+    employeeSection.classList.add("flex");
 
     let innerSection = document.createElement("section");
     innerSection.classList.add("innerMovie");
-    movieSection.append(innerSection);
+    employeeSection.append(innerSection);
 
-    movieSection.append(getMovieImage(movie));
+    /*movieSection.append(getMovieImage(movie));*/
 
-    innerSection.append(getMovieTitle(movie));
-
-    innerSection.append(getMovieDirector(movie));
-
-    innerSection.append(getMovieActors(movie));
-
-    innerSection.append(getMovieYear(movie));
-
-    innerSection.append(getMovieGenres(movie));
-
-    innerSection.append(getMovieDescription(movie));
-
-    innerSection.append(getMovieTrailer(movie));
+    innerSection.append(getJobTitle(employee));
+    innerSection.append(getEmployeeName(employee));
+    innerSection.append(getEmployeeSalary(employee));
+    innerSection.append(getEmployeeUserId(employee));
+    innerSection.append(getEmployeeDaysWorking(employee));
+    innerSection.append(getEmployeeRegion(employee));
+    innerSection.append(getEmployeePhoneNumber(employee));
+    innerSection.append(getEmployeeEmailAddress(employee));
 
 
-    return movieSection;
+    return employeeSection;
 }
-
+/*
 function getMovieImage(movie) {
     let image = document.createElement("img");
     image.classList.add("movieImage");
@@ -46,58 +41,59 @@ function getMovieImage(movie) {
     image.src = `https://portiaportia.github.io/csce242/json/${movie.img}`;
     return image;
 }
+*/
 
-function getMovieTitle(movie) {
+function getJobTitle(employee) {
     let title = document.createElement("h3");
-    title.innerText = movie.title;
+    title.innerText = employee.jobTitle;
     return title;
 }
 
-function getMovieDirector(movie) {
-    let director = document.createElement("p");
-    director.innerHTML += `<strong>Director</strong> ${movie.director}`;
-    return director;
+function getEmployeeName(employee) {
+    let name = document.createElement("p");
+    name.innerHTML += `<strong>Name</strong> ${employee.name}`;
+    return name;
 }
 
-function getMovieActors(movie) {
-    let director = document.createElement("p");
-    director.innerHTML += `<strong>Actors</strong> `;
+function getEmployeeSalary(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>Salary</strong> ${employee.salary}`;
+    return pElem;
+}
+
+function getEmployeeUserId(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>User ID</strong> ${employee.userId}`;
+    return pElem;
+}
+
+function getEmployeeDaysWorking(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>Days Working</strong> `;
     for(i in movie.actors) {
-        director.innerHTML += `${movie.actors[i]}, `;
+        director.innerHTML += `${employee.daysWorking[i]}, `;
     }
-    return director;
+    return pElem;
 }
 
-function getMovieYear(movie) {
-    let director = document.createElement("p");
-    director.innerHTML += `<strong>Year Released</strong> ${movie.year}`;
-    return director;
+function getEmployeeRegion(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>Director</strong> ${employee.region}`;
+    return pElem;
 }
 
-function getMovieGenres(movie) {
-    let director = document.createElement("p");
-    director.innerHTML = `<strong>Genres</strong> `;
-    for(i in movie.genres) {
-        director.innerHTML += `${movie.genres[i]}, `;
-    }
-    return director;
+function getEmployeePhoneNumber(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>Director</strong> ${employee.phoneNumber}`;
+    return pElem;
 }
 
-function getMovieDescription(movie) {
-    let director = document.createElement("p");
-    director.innerHTML += `${movie.description}`;
-    return director;
-}
-
-function getMovieTrailer(movie) {
-    let trailer = document.createElement("button");
-    trailer.classList.add("tButton");
-    trailer.innerHTML = `Click for trailer`
-    trailer.onclick  = function () {
-        location.href = `https://www.youtube.com/results?search_query=${movie.title} trailer`; };
-    return trailer;
+function getEmployeeEmailAddress(employee) {
+    let pElem = document.createElement("p");
+    pElem.innerHTML += `<strong>Director</strong> ${employee.emailAddress}`;
+    return pElem;
 }
 
 window.onload = function(){
-    this.showmovies();
+    this.showEmployees();
 }
