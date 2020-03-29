@@ -1,0 +1,69 @@
+[
+    {
+        "jobTitle":"CEO",
+        "name":"Mathis Phillips",
+        "salary":"4,000,000",
+        "userId":"mphillips",
+        "daysWorking":["Wednesday","Thursday"],
+        "region":"SC",
+        "phoneNumber":"1.(864).999.9999",
+        "emailAddress":"mphillips@bigtimecompany.com",
+        "employeePhoto":"images/mphillips"
+    },
+    {
+        "jobTitle":"CFO",
+        "name":"Stone Turner",
+        "salary":"2,000,000",
+        "userId":"sturner",
+        "daysWorking":["Tuesday","Wednesday","Thursday","Friday"],
+        "region":"NY",
+        "phoneNumber":"1.(864).999.9998",
+        "emailAddress":"sturner@bigtimecompany.com",
+        "employeePhoto":"images/sturner"
+    },
+    {
+        "jobTitle":"COO",
+        "name":"Adams Porter",
+        "salary":"1,000,000",
+        "userId":"aporter",
+        "daysWorking":["Monday","Tuesday","Wednesday","Thursday"],
+        "region":"SC",
+        "phoneNumber":"1.(864).999.9997",
+        "emailAddress":"aporter@bigtimecompany.com",
+        "employeePhoto":"images/aporter"
+    },
+    {
+        "jobTitle":"CMO",
+        "name":"Payne Evans",
+        "salary":"750,000",
+        "userId":"pevans",
+        "daysWorking":["Monday","Tuesday","Thursday","Friday"],
+        "region":"SC",
+        "phoneNumber":"1.(864).999.9996",
+        "emailAddress":"pevans@bigtimecompany.com",
+        "employeePhoto":"images/pevans"
+    },
+    {
+        "jobTitle":"General Manager",
+        "name":"Baker Morris",
+        "salary":"200,000",
+        "userId":"bmorris",
+        "daysWorking":["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "region":"SC",
+        "phoneNumber":"1.(864).999.9995",
+        "emailAddress":"bmorris@bigtimecompany.com",
+        "employeePhoto":"images/bmorris"
+    },
+    {
+        "jobTitle":"Developer",
+        "name":"James Hart",
+        "salary":"350,000",
+        "userId":"jhart",
+        "daysWorking":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "region":"CA",
+        "phoneNumber":"1.(704).999.9994",
+        "emailAddress":"jhart@bigtimecompany.com",
+        "employeePhoto":"images/jhart"
+    }
+
+]
