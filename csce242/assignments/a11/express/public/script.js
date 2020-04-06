@@ -24,8 +24,6 @@ function getmovieItems(employee) {
     innerSection.classList.add("hidden");
     employeeSection.append(innerSection);
 
-    /*movieSection.append(getMovieImage(movie));*/
-
     titleSection.append(getJobTitle(employee));
     let button = document.createElement("button");
     button.innerHTML = `Show Info`;
