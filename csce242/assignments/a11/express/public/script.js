@@ -1,5 +1,5 @@
 async function showEmployees() {
-    let response = await fetch('https://github.com/alecfarmer/alecfarmer.github.io/blob/master/csce242/json/sickness.json');
+    let response = await fetch('https://alecfarmer.github.io/csce242/json/employee.json');
     let employeeJSON = await response.json();
     let employeesSection = document.getElementById("section");
     
@@ -12,16 +12,34 @@ async function showEmployees() {
 
 function getmovieItems(employee) {
     let employeeSection = document.createElement("section");
-    employeeection.classList.add("movie");
-    employeeSection.classList.add("flex");
+    employeeSection.classList.add("movie");
+
+    let titleSection = document.createElement("section");
+    titleSection.classList.add("innerMovie");
+    titleSection.classList.add("center");
+    employeeSection.append(titleSection);
 
     let innerSection = document.createElement("section");
     innerSection.classList.add("innerMovie");
+    innerSection.classList.add("hidden");
+    innerSection.setAttribute("id", "textSection");
     employeeSection.append(innerSection);
 
     /*movieSection.append(getMovieImage(movie));*/
 
-    innerSection.append(getJobTitle(employee));
+    titleSection.append(getJobTitle(employee));
+    let button = document.createElement("button");
+    button.setAttribute("id", "toggleButton");
+    button.innerHTML = `Show Info`;
+    button.classList.add("center");
+    button.classList.add("tButton");
+    button.innerHTML = 'Click me';
+    button.onclick = function() {
+    innerSection.classList.toggle("hidden");
+    return false;
+    };
+    titleSection.append(button);
+
     innerSection.append(getEmployeeName(employee));
     innerSection.append(getEmployeeSalary(employee));
     innerSection.append(getEmployeeUserId(employee));
@@ -29,19 +47,10 @@ function getmovieItems(employee) {
     innerSection.append(getEmployeeRegion(employee));
     innerSection.append(getEmployeePhoneNumber(employee));
     innerSection.append(getEmployeeEmailAddress(employee));
-
+    innerSection.append(getEmployeeImage(employee));
 
     return employeeSection;
 }
-/*
-function getMovieImage(movie) {
-    let image = document.createElement("img");
-    image.classList.add("movieImage");
-    image.classList.add("zoom");
-    image.src = `https://portiaportia.github.io/csce242/json/${movie.img}`;
-    return image;
-}
-*/
 
 function getJobTitle(employee) {
     let title = document.createElement("h3");
@@ -70,30 +79,41 @@ function getEmployeeUserId(employee) {
 function getEmployeeDaysWorking(employee) {
     let pElem = document.createElement("p");
     pElem.innerHTML += `<strong>Days Working</strong> `;
-    for(i in movie.actors) {
-        director.innerHTML += `${employee.daysWorking[i]}, `;
+    for(i in employee.daysWorking) {
+        pElem.innerHTML += `${employee.daysWorking[i]}, `;
     }
     return pElem;
 }
 
 function getEmployeeRegion(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Director</strong> ${employee.region}`;
+    pElem.innerHTML += `<strong>region</strong> ${employee.region}`;
     return pElem;
 }
 
 function getEmployeePhoneNumber(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Director</strong> ${employee.phoneNumber}`;
+    pElem.innerHTML += `<strong>Phone #</strong> ${employee.phoneNumber}`;
     return pElem;
 }
 
 function getEmployeeEmailAddress(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Director</strong> ${employee.emailAddress}`;
+    pElem.innerHTML += `<strong>Email</strong> ${employee.emailAddress}`;
     return pElem;
 }
 
-window.onload = function(){
+function getEmployeeImage(employee) {
+    let image = document.createElement("img");
+    image.classList.add("movieImage");
+    image.src = `https://portiaportia.github.io/csce242/json/${employee.employeePhoto}`;
+    return image;
+}
+
+window.onload = function() {
     this.showEmployees();
 }
+
+let togbutton = document.getElementsByTagName("button");
+let textSec = document.getElementById("textSection");
+togbutton.onclick = console.log(`hi`);

@@ -8,7 +8,7 @@
         "region":"SC",
         "phoneNumber":"1.(864).999.9999",
         "emailAddress":"mphillips@bigtimecompany.com",
-        "employeePhoto":"images/mphillips"
+        "employeePhoto":"images/man1.jpg"
     },
     {
         "jobTitle":"CFO",
@@ -19,7 +19,7 @@
         "region":"NY",
         "phoneNumber":"1.(864).999.9998",
         "emailAddress":"sturner@bigtimecompany.com",
-        "employeePhoto":"images/sturner"
+        "employeePhoto":"images/man2.jpg"
     },
     {
         "jobTitle":"COO",
@@ -30,7 +30,7 @@
         "region":"SC",
         "phoneNumber":"1.(864).999.9997",
         "emailAddress":"aporter@bigtimecompany.com",
-        "employeePhoto":"images/aporter"
+        "employeePhoto":"images/man3.jpg"
     },
     {
         "jobTitle":"CMO",
@@ -41,18 +41,18 @@
         "region":"SC",
         "phoneNumber":"1.(864).999.9996",
         "emailAddress":"pevans@bigtimecompany.com",
-        "employeePhoto":"images/pevans"
+        "employeePhoto":"images/man4.jpg"
     },
     {
         "jobTitle":"General Manager",
-        "name":"Baker Morris",
+        "name":"Kate Morris",
         "salary":"200,000",
-        "userId":"bmorris",
+        "userId":"kmorris",
         "daysWorking":["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "region":"SC",
         "phoneNumber":"1.(864).999.9995",
-        "emailAddress":"bmorris@bigtimecompany.com",
-        "employeePhoto":"images/bmorris"
+        "emailAddress":"kmorris@bigtimecompany.com",
+        "employeePhoto":"images/woman1.jpg"
     },
     {
         "jobTitle":"Developer",
@@ -63,7 +63,7 @@
         "region":"CA",
         "phoneNumber":"1.(704).999.9994",
         "emailAddress":"jhart@bigtimecompany.com",
-        "employeePhoto":"images/jhart"
+        "employeePhoto":"images/man5.jpg"
     }
 
 ]
