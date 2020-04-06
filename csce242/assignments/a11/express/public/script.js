@@ -12,24 +12,22 @@ async function showEmployees() {
 
 function getmovieItems(employee) {
     let employeeSection = document.createElement("section");
-    employeeSection.classList.add("movie");
+    employeeSection.classList.add("employee");
 
     let titleSection = document.createElement("section");
-    titleSection.classList.add("innerMovie");
+    titleSection.classList.add("innerEmployee");
     titleSection.classList.add("center");
     employeeSection.append(titleSection);
 
     let innerSection = document.createElement("section");
-    innerSection.classList.add("innerMovie");
+    innerSection.classList.add("innerEmployee");
     innerSection.classList.add("hidden");
-    innerSection.setAttribute("id", "textSection");
     employeeSection.append(innerSection);
 
     /*movieSection.append(getMovieImage(movie));*/
 
     titleSection.append(getJobTitle(employee));
     let button = document.createElement("button");
-    button.setAttribute("id", "toggleButton");
     button.innerHTML = `Show Info`;
     button.classList.add("center");
     button.classList.add("tButton");
@@ -105,7 +103,7 @@ function getEmployeeEmailAddress(employee) {
 
 function getEmployeeImage(employee) {
     let image = document.createElement("img");
-    image.classList.add("movieImage");
+    image.classList.add("imageCenter");
     image.src = `https://alecfarmer.github.io/csce242/json/${employee.employeePhoto}`;
     return image;
 }
@@ -113,7 +111,3 @@ function getEmployeeImage(employee) {
 window.onload = function() {
     this.showEmployees();
 }
-
-let togbutton = document.getElementsByTagName("button");
-let textSec = document.getElementById("textSection");
-togbutton.onclick = console.log(`hi`);
