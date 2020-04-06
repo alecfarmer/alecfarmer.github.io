@@ -106,7 +106,7 @@ function getEmployeeEmailAddress(employee) {
 function getEmployeeImage(employee) {
     let image = document.createElement("img");
     image.classList.add("movieImage");
-    image.src = `https://portiaportia.github.io/csce242/json/${employee.employeePhoto}`;
+    image.src = `https://alecfarmer.github.io/csce242/json/${employee.employeePhoto}`;
     return image;
 }
 

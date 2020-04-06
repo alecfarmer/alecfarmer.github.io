@@ -8,7 +8,7 @@
         "region":"SC",
         "phoneNumber":"1.(864).999.9999",
         "emailAddress":"mphillips@bigtimecompany.com",
-        "employeePhoto":"images/man1.jpg"
+        "employeePhoto":"images/man1.png"
     },
     {
         "jobTitle":"CFO",
@@ -63,7 +63,7 @@
         "region":"CA",
         "phoneNumber":"1.(704).999.9994",
         "emailAddress":"jhart@bigtimecompany.com",
-        "employeePhoto":"images/man5.jpg"
+        "employeePhoto":"images/man5.png"
     }
 
 ]
