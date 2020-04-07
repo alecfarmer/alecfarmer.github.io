@@ -83,7 +83,7 @@ function getEmployeeDaysWorking(employee) {
 
 function getEmployeeRegion(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>region</strong> ${employee.region}`;
+    pElem.innerHTML += `<strong>Region</strong> ${employee.region}`;
     return pElem;
 }
 
