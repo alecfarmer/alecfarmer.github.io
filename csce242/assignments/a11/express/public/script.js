@@ -56,25 +56,25 @@ function getJobTitle(employee) {
 
 function getEmployeeName(employee) {
     let name = document.createElement("p");
-    name.innerHTML += `<strong>Name</strong> ${employee.name}`;
+    name.innerHTML += `<strong>Name</strong>: ${employee.name}`;
     return name;
 }
 
 function getEmployeeSalary(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Salary</strong> ${employee.salary}`;
+    pElem.innerHTML += `<strong>Salary</strong>: $${employee.salary}`;
     return pElem;
 }
 
 function getEmployeeUserId(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>User ID</strong> ${employee.userId}`;
+    pElem.innerHTML += `<strong>User ID</strong>: ${employee.userId}`;
     return pElem;
 }
 
 function getEmployeeDaysWorking(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Days Working</strong> `;
+    pElem.innerHTML += `<strong>Days Working</strong>: `;
     for(i in employee.daysWorking) {
         pElem.innerHTML += `${employee.daysWorking[i]}, `;
     }
@@ -83,19 +83,19 @@ function getEmployeeDaysWorking(employee) {
 
 function getEmployeeRegion(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Region</strong> ${employee.region}`;
+    pElem.innerHTML += `<strong>Region</strong>: ${employee.region}`;
     return pElem;
 }
 
 function getEmployeePhoneNumber(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Phone #</strong> ${employee.phoneNumber}`;
+    pElem.innerHTML += `<strong>Phone #</strong>: ${employee.phoneNumber}`;
     return pElem;
 }
 
 function getEmployeeEmailAddress(employee) {
     let pElem = document.createElement("p");
-    pElem.innerHTML += `<strong>Email</strong> ${employee.emailAddress}`;
+    pElem.innerHTML += `<strong>Email</strong>: ${employee.emailAddress}`;
     return pElem;
 }
 

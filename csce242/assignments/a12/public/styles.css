@@ -1,0 +1,86 @@
+body {
+    font-family:arial;
+    background: #2d4059;
+}
+
+#dessert-list {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+#title {
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+    color: white;
+}
+
+.recipe {
+    width:30%;
+    background:#22d1ee;
+    padding:5px;
+    margin:5px;
+    border-radius: 10px;
+}
+
+.recipe a {
+    text-decoration:none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.hidden {
+    display:none;
+}
+
+#dessert-forms {
+    display: flex;
+    justify-content: center;
+}
+
+.dessert-form {
+    background:#1f2c6e;
+    padding: 5px;
+    width: 40%;
+    margin: 5px;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+.dessert-form h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.name-label-input {
+    display: flexbox;
+}
+
+.name-label-input input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.btn-class {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit {
+    width: 40%;
+    margin: 5px;
+    background: #1473BA;
+    border-color: #1473BA;
+    padding: 5px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 15px;
+}
