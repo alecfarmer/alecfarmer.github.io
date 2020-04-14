@@ -1,98 +1,143 @@
-async function displayDesserts(){
-    let response = await fetch('api/recipes/');
-    let recipesJSON = await response.json();
-    let recipesDiv = document.getElementById("dessert-list");
-    recipesDiv.innerHTML = "";
+// James (Alec) Farmer
+async function displayPlayers(){
+    let response = await fetch('api/players/');
+    let playersJSON = await response.json();
+    let playersDiv = document.getElementById("player-list");
+    playersDiv.innerHTML = "";
 
-    for(i in recipesJSON){
-        let recipe = recipesJSON[i];
-        recipesDiv.append(getRecipeItem(recipe));
+    for(i in playersJSON){
+        let player = playersJSON[i];
+        playersDiv.append(getPlayerInfo(player));
     }
 }
 
-function getRecipeItem(recipe){
-    let recipeSection = document.createElement("section");
-    recipeSection.classList.add("recipe");
+function getPlayerInfo(player){
+    let playerSection = document.createElement("section");
+    playerSection.classList.add("player");
 
     let aTitle = document.createElement("a");
-    aTitle.setAttribute("data-id", recipe.id);
+    aTitle.setAttribute("data-id", player.id);
     aTitle.href = "#";
-    aTitle.onclick = showRecipeDetails;
+    aTitle.onclick = showPlayerDetails;
     let h3Elem = document.createElement("h3");
-    h3Elem.textContent = recipe.name;
+    h3Elem.textContent = player.name;
     aTitle.append(h3Elem);
-    recipeSection.append(aTitle);
+    playerSection.append(aTitle);
 
-    return recipeSection;
+    return playerSection;
 }
 
-async function showRecipeDetails(){
+async function showPlayerDetails(){
     let id = this.getAttribute("data-id");
-    let response = await fetch(`/api/recipes/${id}`);
+    let response = await fetch(`/api/players/${id}`);
 
     if(response.status != 200){
-        //display an error
-        console.log("Error reciving recipe");
+        console.log("Error reciving player");
         return;
     }
 
-    let recipe = await response.json();
-    document.getElementById("recipe-id").textContent = recipe.id;
-    document.getElementById("txt-name").value = recipe.name;
-    document.getElementById("txt-description").value = recipe.description;
+    let player = await response.json();
+    document.getElementById("player-id").textContent = player.id;
+    document.getElementById("txt-name").value = player.name;
+    document.getElementById("txt-batting-average").value = player.battingAverage;
+    document.getElementById("txt-position").value = player.position;
+    document.getElementById("txt-team").value = player.team;
 }
 
-async function addRecipe(){
-    let recipeName = document.getElementById("txt-add-name").value;
-    let recipeDescription = document.getElementById("txt-add-description").value;
+async function addPlayer(){
+    let playerName = document.getElementById("txt-add-name").value;
+    let playerBattingAverage = document.getElementById("txt-add-batting-average").value;
+    let playerPosition = document.getElementById("txt-add-position").value;
+    let playerTeam = document.getElementById("txt-add-team").value;
 
-    let recipe = {"name":recipeName, "description": recipeDescription};
+    let player = {"name":playerName, "battingAverage":playerBattingAverage, "position":playerPosition, "team":playerTeam};
     
-    let response = await fetch('/api/recipes',{
+    let response = await fetch(`/api/players`,{
         method:"POST",
         headers:{
             'Content-Type':'application/json;charset=utf-8',
         },
-        body:JSON.stringify(recipe),
+        body:JSON.stringify(player),
     });
 
-    if(response.status != 200){
-        console.log("ERROR posting data");
+    if(response.status != 200) {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    } 
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function() {
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
     console.log(result);
-    displayDesserts();
+    displayPlayers();
 }
 
-async function editRecipe(){
-    let recipeId = document.getElementById("recipe-id").textContent;
-    let recipeName = document.getElementById("txt-name").value;
-    let recipeDescription = document.getElementById("txt-description").value;
-    let recipe = {"name":recipeName, "description": recipeDescription};
+async function editPlayer(){
+    let playerId = document.getElementById("player-id").textContent;
+    let playerName = document.getElementById("txt-name").value;
+    let playerBattingAverage = document.getElementById("txt-batting-average").value;
+    let playerPosition = document.getElementById("txt-position").value;
+    let playerTeam = document.getElementById("txt-team").value;
+    let player = {"name":playerName, "battingAverage":playerBattingAverage, "position":playerPosition, "team":playerTeam};
 
-    let response = await fetch(`/api/recipes/${recipeId}`,{
+    let response = await fetch(`/api/players/${playerId}`,{
         method:'PUT',
         headers:{
             'Content-Type':'application/json;charset=utf-8',
         },
-        body: JSON.stringify(recipe)
+        body: JSON.stringify(player)
     });
 
     if(response.status != 200){
-        console.log("Error updating recipe");
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    }
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
-    displayDesserts();
+    console.log(result);
+    displayPlayers();
 }
 
-async function deleteRecipe(){
-    let recipeId = document.getElementById("recipe-id").textContent;
+async function deletePlayer(){
+    let playerId = document.getElementById("player-id").textContent;
     
-    let response = await fetch(`/api/recipes/${recipeId}`,{
+    let response = await fetch(`/api/players/${playerId}`,{
         method:"DELETE",
         headers:{
             'Content-Type':'application/json;charset=utf-8',
@@ -100,23 +145,43 @@ async function deleteRecipe(){
     });
 
     if(response.status != 200){
-        console.log("Error deleting");
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    }
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
-    displayDesserts();
+    console.log(result);
+    displayPlayers();
 }
 
 window.onload = function(){
-    this.displayDesserts();
+    this.displayPlayers();
 
-    let addBtn = document.getElementById("btn-add-recipe");
-    addBtn.onclick = addRecipe;
+    let addBtn = document.getElementById("btn-add-player");
+    addBtn.onclick = addPlayer;
 
-    let editBtn = document.getElementById("btn-edit-recipe");
-    editBtn.onclick = editRecipe;
+    let editBtn = document.getElementById("btn-edit-player");
+    editBtn.onclick = editPlayer;
 
-    let deleteBtn = document.getElementById("btn-delete-recipe");
-    deleteBtn.onclick = deleteRecipe;
+    let deleteBtn = document.getElementById("btn-delete-player");
+    deleteBtn.onclick = deletePlayer;
 }

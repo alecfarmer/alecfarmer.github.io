@@ -1,3 +1,4 @@
+<!-- James (Alec) Farmer -->
 <!Doctype html>
 <html>
     <head>
@@ -5,40 +6,59 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div id="dessert-forms">
-            <div id="dessert-details" class="dessert-form">
-                <h2>Recipe Details</h2>
-                <span id="recipe-id" class="hidden"></span>
+        <div id="note" class="notify"><span id="notifyType" class=""></span></div>
+        <div id="player-forms">
+            <div id="player-details" class="player-form">
+                <h2>Player Details</h2>
+                <span id="player-id" class="hidden"></span>
+                
                 <p class="name-label-input">
-                    <label for="txt-name">Name: </label>
-                    <input id="txt-name">
+                    <label for="txt-name">Name</label>
+                    <input placeholder="Babe Ruth" id="txt-name">
                 </p>
                 <p class="name-label-input">
-                    <label for="txt-description">Description: </label>
-                    <input placeholder="ExampleDomain" id="txt-description">
+                    <label for="txt-batting-average">Batting Average</label>
+                    <input placeholder="342" id="txt-batting-average">
                 </p>
+                <p class="name-label-input">
+                    <label for="txt-position">Position</label>
+                    <input placeholder="Outfield" id="txt-position">
+                </p>
+                <p class="name-label-input">
+                    <label for="txt-team">Team</label>
+                    <input placeholder="Yankees" id="txt-team">
+                </p>
+
                 <div class="btn-class">
-                    <button class="btn-submit" id="btn-edit-recipe">Edit Recipe</button>
-                    <button class="btn-submit" id="btn-delete-recipe">Delete Recipe</button>
+                    <button class="btn-submit" id="btn-edit-player">Edit Player</button>
+                    <button class="btn-submit" id="btn-delete-player">Delete Player</button>
                 </div>
             </div>
 
-            <div id="add-dessert" class="dessert-form">
-                <h2>Add Recipe</h2>
+            <div id="add-player" class="player-form">
+                <h2>Add Player</h2>
                 <p class="name-label-input">
-                    <label for="txt-add-name">Name: </label>
-                    <input id="txt-add-name">
+                    <label for="txt-add-name">Name</label>
+                    <input placeholder="Babe Ruth" id="txt-add-name">
                 </p>
                 <p class="name-label-input">
-                    <label for="txt-add-description">Description: </label>
-                    <input placeholder="ExampleDomain" id="txt-add-description">
+                    <label for="txt-add-batting-average">Batting Average</label>
+                    <input placeholder="342" id="txt-add-batting-average">
+                </p>
+                <p class="name-label-input">
+                    <label for="txt-add-position">Position</label>
+                    <input placeholder="Outfield" id="txt-add-position">
+                </p>
+                <p class="name-label-input">
+                    <label for="txt-add-team">Team</label>
+                    <input placeholder="Yankees" id="txt-add-team">
                 </p>
                 <div class="btn-class">
-                    <button class="btn-submit" id="btn-add-recipe">Add Recipe</button>
+                    <button class="btn-submit" id="btn-add-player">Add Player</button>
                 </div>
             </div>
         </div>
         <h1 id="title">List</h1>
-        <div id="dessert-list"></div>
+        <div id="player-list"></div>
     </body>
 </html>

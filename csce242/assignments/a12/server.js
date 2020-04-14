@@ -1,85 +1,95 @@
+// James (Alec) Farmer
 const express = require("express");
 const app = express();
 const Joi = require("joi");
 app.use(express.static("public"));
 app.use(express.json());
 
-let recipes = [
-    {id:1, name:"Banana Bread", description:"Extra soft and bannanny"},
-    {id:2, name:"Chocolate Chip Cookies", description: "Very chocolately cookies"},
-    {id:3, name:"Vanilla Cake", description: "Real vanilla bean in a cake"}
+let players = [
+    {id:1, name:"Jacky Bradely Jr", battingAverage:"236", position:"Outfield", team:"Boston Red Socks"},
+    {id:2, name:"Whit Merrifield", battingAverage:"296", position:"Outfield", team:"Kansas City Royals"},
+    {id:3, name:"Grayson Greiner", battingAverage:"207", position:"Catcher", team:"Detroit Tigers"},
+    {id:4, name:"Chipper Jones", battingAverage:"303", position:"Third Base", team:"Atlanta Braves"},
+    {id:5, name:"Jason Hayward", battingAverage:"261", position:"Outfield", team:"Chicago Cubs"},
+    {id:6, name:"Mike Trout", battingAverage:"303", position:"Outfield", team:"Los Angeles Angels"}
 ];
 
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get('/api/recipes', (req,res)=>{
-    res.send(recipes);
+app.get('/api/players', (req,res)=>{
+    res.send(players);
 });
 
-app.get('/api/recipes/:id',(req,res)=>{
-    const recipe = recipes.find(r => r.id === parseInt(req.params.id));
+app.get('/api/players/:id',(req,res)=>{
+    const player = players.find(r => r.id === parseInt(req.params.id));
 
-    if(!recipe) res.status(404).send("The recipe with the given id was not found");
+    if(!player) res.status(404).send("The player with the given id was not found");
 
-    res.send(recipe);
+    res.send(player);
 });
 
-app.post('/api/recipes', (req,res)=>{
-    const result = validateRecipe(req.body);
+app.post('/api/players', (req,res)=>{
+    const result = validatePlayer(req.body);
     
     if(result.error){
         res.status(400).send(result.error.details[0].message);
         return;
     }
     
-    const recipe = {
-        id:recipes.length+1,
+    const player = {
+        id:players.length+1,
         name:req.body.name,
-        description:req.body.description
+        battingAverage:req.body.battingAverage,
+        position:req.body.position,
+        team:req.body.team
     };
-    recipes.push(recipe);
-    res.send(recipe);
+    players.push(player);
+    res.send(player);
 });
 
-app.put('/api/recipes/:id',(req,res)=>{
-    const recipe =recipes.find(r=>r.id === parseInt(req.params.id));
+app.put('/api/players/:id',(req,res)=>{
+    const player = players.find(p => p.id === parseInt(req.params.id));
     
-    if(!recipe) res.status(404).send("Recipe with given id was not found");
+    if(!player) res.status(404).send("Player with given id was not found");
 
-    const result = validateRecipe(req.body);
+    const result = validatePlayer(req.body);
 
     if(result.error){
         res.status(400).send(result.error.details[0].message);
         return;
     }
 
-    recipe.name = req.body.name;
-    recipe.description = req.body.description;
-    res.send(recipe);
+    player.name = req.body.name;
+    player.battingAverage = req.body.battingAverage;
+    player.position = req.body.position;
+    player.team = req.body.team;
+    res.send(player);
 });
 
-app.delete('/api/recipes/:id',(req,res)=>{
-    const recipe = recipes.find(r=>r.id===parseInt(req.params.id));
+app.delete('/api/players/:id',(req,res)=>{
+    const player = players.find(p => p.id===parseInt(req.params.id));
 
-    if(!recipe){
-        req.status(404).send("This recipe with the given id was not found");
+    if(!player){
+        req.status(404).send("This player with the given id was not found");
     }
 
-    const index = recipes.indexOf(recipe);
-    recipes.splice(index,1);
+    const index = players.indexOf(player);
+    players.splice(index,1);
 
-    res.send(recipe);
+    res.send(player);
 });
 
-function validateRecipe(recipe){
+function validatePlayer(player){
     const schema = {
         name:Joi.string().min(3).required(),
-        description:Joi.string().min(3).required()
+        battingAverage:Joi.string().required(),
+        position:Joi.string().min(4).required(),
+        team:Joi.string().min(4).required()
     };
 
-    return Joi.validate(recipe,schema);
+    return Joi.validate(player,schema);
 }
 
 app.listen(3000, ()=>{
