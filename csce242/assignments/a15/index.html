@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="title-stuff">
+            <div>
+                <h1>Player Scouting Report</h1>
+            </div>
+            <div>
+                <button id="open-pop" class="add-button">Add Player</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div id="add-dessert" class="add-form">
+                <span class="close"></span>
+                <h2>Add Recipe</h2>
+                <p>
+                    <label for="txt-add-name">Name: </label>
+                    <input id="txt-add-name">
+                </p>
+                <p>
+                    <label for="txt-add-description">Description: </label>
+                    <input id="txt-add-description">
+                </p>
+                <button id="btn-add-recipe">Add Recipe</button>
+            </div>
+            </div>
+          
+          </div>
+          <div id="edit-pop" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div id="add-dessert" class="add-form">
+                <span class="close"></span>
+                <span id="recipe-id" class="hidden"></span>
+                <p>
+                    <label for="txt-name">Name: </label>
+                    <input id="txt-name">
+                </p>
+                <p>
+                    <label for="txt-description">Description: </label>
+                    <input id="txt-description">
+                </p>
+                <button id="btn-edit-recipe">Edit Recipe</button>
+            </div>
+            </div>
+          
+          </div>
+        <div id="dessert-forms">
+            <div id="dessert-details" class="dessert-form">
+                <button id="btn-delete-recipe">Delete Recipe</button>   
+            </div>
+        </div>
+        <div id="dessert-list"></div>
+    </body>
+</html>
