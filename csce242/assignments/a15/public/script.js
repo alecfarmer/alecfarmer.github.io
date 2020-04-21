@@ -1,212 +1,286 @@
-async function displayDesserts() {
-    let response = await fetch('api/recipes/');
-    let recipesJSON = await response.json();
-    let recipesDiv = document.getElementById("dessert-list");
-    recipesDiv.innerHTML = "";
+// James Alec Farmer
+window.onload = function() {
+    this.displayPlayers();
 
-    for(i in recipesJSON){
-        let recipe = recipesJSON[i];
-        recipesDiv.append(getRecipeItem(recipe));
+    // ADD BUTTON POP OUT
+    let addExeBtn = document.getElementById("adding-pop");
+    let buttonA = this.document.getElementById("btn-add-pop");
+    let btn = this.document.getElementById("btn-add-player");
+    // DISPLAY POP OUT
+    buttonA.onclick = function() {
+        addExeBtn.style.display = "block";
+    }
+    // ADD PLAYER / CLOSE POP OUT
+    btn.onclick = function() {
+        addPlayer();
+        setTimeout(() => { addExeBtn.style.display = "none"; }, 800);
+    }
+    // CLOSE POP OUT
+    window.onclick = function(event) {
+        if(event.target == addExeBtn) {
+            addExeBtn.style.display = "none";
+        }
+    }
+    // END ADD POP OUT
+
+
+    // START EDIT BUTTON POP OUT
+    let editExeBtn = document.getElementById("edit-pop");
+    /// --> Button found in js creation below \\\
+    let btnEdit = document.getElementById("btn-edit-player");
+    // EDIT PLAYER / CLOSE POP OUT
+    btnEdit.onclick = function() {
+        editPlayer();
+        setTimeout(() => { editExeBtn.style.display = "none"; }, 800);
+    }
+    // CLOSE POP OUT
+    window.onclick = function(event) {
+        if(event.target == editExeBtn) {
+            editExeBtn.style.display = "none";
+        }
+    }
+    // END EDIT POP OUT
+
+
+    // START DELETE POP OUT
+    let deleteExeBtn = document.getElementById("delete-pop");
+    /// --> Button found in js creation below \\\
+    let btnDelete = document.getElementById("btn-delete-player");
+    let btnNevermind = document.getElementById("btn-exit");
+    btnDelete.onclick = function() {
+        deletePlayer();
+        setTimeout(() => { deleteExeBtn.style.display = "none"; }, 800);
+    }
+    // NEVERMIND CLOSE
+    btnNevermind.onclick = function() {
+        deleteExeBtn.style.display = "none";
+    }
+    // CLOSE POP OUT
+    window.onclick = function(event) {
+        if(event.target == deleteExeBtn) {
+            deleteExeBtn.style.display = "none";
+        }
+    }
+    // END DELETE POP OUT
+
+}
+async function displayPlayers() {
+    let response = await fetch('api/players/');
+    let playersJSON = await response.json();
+    let playersDiv = document.getElementById("player-list");
+    playersDiv.innerHTML = "";
+
+    for(i in playersJSON) {
+        let player = playersJSON[i];
+        playersDiv.append(getPlayerInfo(player));
     }
 }
 
-function getRecipeItem(recipe) {
-    /*
-    let recipeSection = document.createElement("section");
-    recipeSection.classList.add("recipe");
-
-    let aTitle = document.createElement("a");
-    aTitle.setAttribute("data-id", recipe._id);
-    aTitle.href = "#";
-    aTitle.onclick = showRecipeDetails;
-    let h3Elem = document.createElement("h3");
-    h3Elem.textContent = recipe.name;
-    aTitle.append(h3Elem);
-    recipeSection.append(aTitle);
-
-    let abutton = document.createElement("button");
-    recipeSection.append(abutton);
-    */
-
-    // Main Section
+function getPlayerInfo(player) {
+    
+    // MAIN SECTION
     let mainSection = document.createElement("section");
     mainSection.classList.add("container-fade");
-    mainSection.classList.add("recipe");
-    /*
-    let aTitle = document.createElement("a");
-    aTitle.setAttribute("data-id", recipe._id);
-    aTitle.href = "#";
-    aTitle.onclick = showRecipeDetails;
-    */
-    let h3Elem = document.createElement("h3");
-    h3Elem.textContent = recipe.name;
-    mainSection.append(h3Elem);
+    mainSection.classList.add("player");
 
-   // Button Div
-    let btnDiv = document.createElement("div");
-    btnDiv.classList.add("overlay");
-    btnDiv.classList.add("flex");
-    mainSection.append(btnDiv);
+    // TITLE
+    let title = document.createElement("h3");
+    title.textContent = player.name;
+    mainSection.append(title);
 
-    // Edit Button
-    let editBtn = document.createElement("button");
-    editBtn.innerHTML = `Edit`;
-    editBtn.classList.add("adjBtn");
-    editBtn.setAttribute("data-id", recipe._id);
-    editBtn.id = `buttonEdit`
-    editBtn.setAttribute("edit-id", editBtn.id);
-    console.log(`${editBtn.id}`);
-    btnDiv.append(editBtn);
+    // INNER BUTTON DIV
+    let buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("overlay");
+    buttonDiv.classList.add("flex");
+    mainSection.append(buttonDiv);
 
-    // Delete Button
-    let deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = `Delete`;
-    deleteBtn.classList.add("adjBtn");
-    btnDiv.append(deleteBtn);
+    // EDIT BUTTON
+    let buttonEdit = document.createElement("button");
+    buttonEdit.innerHTML = `Edit`;
+    buttonEdit.classList.add("innerButtons");
+    let editExeBtn = document.getElementById("edit-pop");
+    buttonEdit.onclick = function() {
+        showPlayerDetails(player);
+        editExeBtn.style.display = "block";
+    }
+    buttonDiv.append(buttonEdit);
 
-
+    // DELETE BUTTON
+    let buttonDelete = document.createElement("button");
+    buttonDelete.innerHTML = `Delete`;
+    buttonDelete.classList.add("innerButtons");
+    let deleteExeBtn = document.getElementById("delete-pop");
+    buttonDelete.onclick = function() {
+        showPlayerDetails(player);
+        deleteExeBtn.style.display = "block";
+    }
+    buttonDiv.append(buttonDelete);
 
     return mainSection;
 }
 
-async function showRecipeDetails() {
-    let id = this.getAttribute("data-id");
-    let response = await fetch(`/api/recipes/${id}`);
+async function showPlayerDetails(player) {
+    let playerId = player._id
+    let response = await fetch(`/api/players/${playerId}`);
 
-    if(response.status != 200){
-        //display an error
-        console.log("Error reciving recipe");
+    if(response.status != 200) {
+        // DISPLAY ERROR
+        console.log("Error reciving player!");
         return;
     }
 
-    let recipe = await response.json();
-    document.getElementById("recipe-id").textContent = recipe._id;
-    document.getElementById("txt-name").value = recipe.name;
-    document.getElementById("txt-description").value = recipe.description;
+    player = await response.json();
+    document.getElementById("player-id").textContent = playerId;
+    document.getElementById("txt-name").value = player.name;
+    document.getElementById("txt-age").value = player.age;
+    document.getElementById("txt-position").value = player.position;
+    document.getElementById("txt-bt").value = player.batThrow;
+    document.getElementById("txt-commit").value = player.commitment;
+    document.getElementById("txt-gradyear").value = player.gradYear;
+    document.getElementById("txt-natrank").value = player.nationRanking;
+    document.getElementById("txt-staterank").value = player.stateRanking;
+    document.getElementById("txt-rev").value = player.reviewer;
 }
 
-async function addRecipe() {
-    let recipeName = document.getElementById("txt-add-name").value;
-    let recipeDescription = document.getElementById("txt-add-description").value;
+async function addPlayer() {
+    let playerName = document.getElementById("txt-add-name").value;
+    let playerAge = document.getElementById("txt-add-age").value;
+    let playerPosition = document.getElementById("txt-add-position").value;
+    let playerBatThrow = document.getElementById("txt-add-bt").value;
+    let playerCommitment = document.getElementById("txt-add-commit").value;
+    let playerGradYear = document.getElementById("txt-add-gradyear").value;
+    let playerNatRank = document.getElementById("txt-add-natrank").value;
+    let playerStateRank = document.getElementById("txt-add-staterank").value;
+    let playerRev = document.getElementById("txt-add-rev").value;
 
-    let recipe = {"name":recipeName, "description": recipeDescription};
+    let player = {"name":playerName, "age":playerAge, "position":playerPosition, "batThrow":playerBatThrow, "commitment":playerCommitment,
+        "gradYear":playerGradYear, "nationRanking":playerNatRank, "stateRanking":playerStateRank, "reviewer":playerRev};
     
-    let response = await fetch('/api/recipes',{
+    let response = await fetch('/api/players', {
         method:"POST",
         headers:{
             'Content-Type':'application/json;charset=utf-8',
         },
-        body:JSON.stringify(recipe),
+        body:JSON.stringify(player),
     });
 
-    if(response.status != 200){
-        console.log("ERROR posting data");
+    if(response.status != 200) {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    } 
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function() {
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
     console.log(result);
-    displayDesserts();
+    displayPlayers();
 }
 
-async function editRecipe() {
-    let recipeId = document.getElementById("recipe-id").textContent;
-    let recipeName = document.getElementById("txt-name").value;
-    let recipeDescription = document.getElementById("txt-description").value;
-    let recipe = {"name":recipeName, "description": recipeDescription};
+async function editPlayer() {
+    let playerId = document.getElementById("player-id").textContent;
+    console.log(playerId);
+    let playerName = document.getElementById("txt-name").value;
+    let playerAge = document.getElementById("txt-age").value;
+    let playerPosition = document.getElementById("txt-position").value;
+    let playerBatThrow = document.getElementById("txt-bt").value;
+    let playerCommitment = document.getElementById("txt-commit").value;
+    let playerGradYear = document.getElementById("txt-gradyear").value;
+    let playerNatRank = document.getElementById("txt-natrank").value;
+    let playerStateRank = document.getElementById("txt-staterank").value;
+    let playerRev = document.getElementById("txt-rev").value;
 
-    let response = await fetch(`/api/recipes/${recipeId}`,{
+    let player = {"name":playerName, "age":playerAge, "position":playerPosition, "batThrow":playerBatThrow, "commitment":playerCommitment,
+        "gradYear":playerGradYear, "nationRanking":playerNatRank, "stateRanking":playerStateRank, "reviewer":playerRev};
+
+    let response = await fetch(`/api/players/${playerId}`, {
         method:'PUT',
         headers:{
             'Content-Type':'application/json;charset=utf-8',
         },
-        body: JSON.stringify(recipe)
+        body: JSON.stringify(player)
     });
 
-    if(response.status != 200){
-        console.log("Error updating recipe");
+    if(response.status != 200) {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    } 
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function() {
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
-    displayDesserts();
+    console.log(result);
+    displayPlayers();
 }
 
-async function deleteRecipe() {
-    let recipeId = document.getElementById("recipe-id").textContent;
+async function deletePlayer(){
+    let playerId = document.getElementById("player-id").textContent;
     
-    let response = await fetch(`/api/recipes/${recipeId}`,{
+    let response = await fetch(`/api/players/${playerId}`,{
         method:"DELETE",
         headers:{
             'Content-Type':'application/json;charset=utf-8',
         }
     });
 
-    if(response.status != 200){
-        console.log("Error deleting");
+    if(response.status != 200) {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("failure");
+
+        setTimeout(function(){
+            note.classList.remove("active");
+            span.classList.remove("failure");
+        }, 3000);
         return;
+    } 
+    else {
+        let span = document.getElementById("notifyType");
+        let note = document.getElementById("note");
+        note.classList.toggle("active");
+        span.classList.toggle("success");
+
+        setTimeout(function() {
+            note.classList.remove("active");
+            span.classList.remove("success");
+        }, 3000);
     }
 
     let result = await response.json();
-    displayDesserts();
-}
-
-function editButtonPop() {
-    let editBtn = document.getElementById("btn-edit-recipe");
-    editBtn.onclick = editRecipe;
-
-    let deleteBtn = document.getElementById("btn-delete-recipe");
-    deleteBtn.onclick = deleteRecipe;
-
-    // Edit Pop-out
-    let editPop = document.getElementById("edit-pop");
-    //let openEditBtn = getAttribute("editbtnopen");
-    //let test = getAttribute("data-id");
-    //let openEditBtn = document.getElementsByTagName("editbtnopen");
-    //let openEditBtn = document.getElementById("edit-id");
-    let test = document.getElementById("buttonEdit").getAttribute("id");
-
-    let editbtnn = document.getElementById("btn-edit-recipe");
-
-    test.onclick = function() {
-        editPop.style.display = "block";
-        console.log("test");
-    }
-
-    editbtnn.onclick = function() {
-        editRecipe();
-        setTimeout(() => { editPop.style.display = "none"; }, 800);
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-}
-
-window.onload = function() {
-    this.displayDesserts();
-    this.editButtonPop();
-
-
-    // Add Pop-out
-    let modal = document.getElementById("myModal");
-    let button = document.getElementById("open-pop");
-    let btn = this.document.getElementById("btn-add-recipe");
-
-    button.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    btn.onclick = function() {
-        addRecipe();
-        setTimeout(() => { modal.style.display = "none"; }, 800);
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    console.log(result);
+    displayPlayers();
 }

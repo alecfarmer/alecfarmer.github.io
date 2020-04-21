@@ -1,63 +1,132 @@
-<!Doctype html>
+<!-- James Alec Farmer -->
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
     </head>
     <body>
-        <div class="title-stuff">
-            <div>
+        <div id="note" class="notify"><span id="notifyType" class=""></span></div>
+        <div class="main-title">
+            <section>
                 <h1>Player Scouting Report</h1>
-            </div>
-            <div>
-                <button id="open-pop" class="add-button">Add Player</button>
+            </section>
+            <section>
+                <button id="btn-add-pop" class="add-button">Add Player</button>
+            </section>
+        </div>
+        <!-- START ADDING POP OUT -->
+        <div id="adding-pop" class="modal">
+            <div class="modal-content">
+                <div id="add-player" class="add-form">
+                    <span class="close"></span>
+                    <h2>Add Player</h2>
+                    <p>
+                        <label for="txt-add-name">Name</label>
+                        <input id="txt-add-name">
+                    </p>
+                    <p>
+                        <label for="txt-add-age">Age</label>
+                        <input id="txt-add-age">
+                    </p>
+                    <p>
+                        <label for="txt-add-position">Position</label>
+                        <input id="txt-add-position">
+                    </p>
+                    <p>
+                        <label for="txt-add-bt">Bat/Throw</label>
+                        <input id="txt-add-bt">
+                    </p>
+                    <p>
+                        <label for="txt-add-commit">Commitment</label>
+                        <input id="txt-add-commit">
+                    </p>
+                    <p>
+                        <label for="txt-add-gradyear">Grad Year</label>
+                        <input id="txt-add-gradyear">
+                    </p>
+                    <p>
+                        <label for="txt-add-natrank">National Ranking</label>
+                        <input id="txt-add-natrank">
+                    </p>
+                    <p>
+                        <label for="txt-add-staterank">State Ranking</label>
+                        <input id="txt-add-staterank">
+                    </p>
+                    <p>
+                        <label for="txt-add-rev">Reviewer</label>
+                        <input id="txt-add-rev">
+                    </p>
+                    <button id="btn-add-player">Add Player</button>
+                </div>
             </div>
         </div>
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
+        <!-- END ADDING POP OUT -->
+        <!-- START EDIT POP OUT -->
+        <div id="edit-pop" class="modal">
             <div class="modal-content">
-              <div id="add-dessert" class="add-form">
-                <span class="close"></span>
-                <h2>Add Recipe</h2>
-                <p>
-                    <label for="txt-add-name">Name: </label>
-                    <input id="txt-add-name">
-                </p>
-                <p>
-                    <label for="txt-add-description">Description: </label>
-                    <input id="txt-add-description">
-                </p>
-                <button id="btn-add-recipe">Add Recipe</button>
-            </div>
-            </div>
-          
-          </div>
-          <div id="edit-pop" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <div id="add-dessert" class="add-form">
-                <span class="close"></span>
-                <span id="recipe-id" class="hidden"></span>
-                <p>
-                    <label for="txt-name">Name: </label>
-                    <input id="txt-name">
-                </p>
-                <p>
-                    <label for="txt-description">Description: </label>
-                    <input id="txt-description">
-                </p>
-                <button id="btn-edit-recipe">Edit Recipe</button>
-            </div>
-            </div>
-          
-          </div>
-        <div id="dessert-forms">
-            <div id="dessert-details" class="dessert-form">
-                <button id="btn-delete-recipe">Delete Recipe</button>   
+                <div id="edit-player" class="edit-form">
+                    <span class="close"></span>
+                    <span id="player-id" class="hidden"></span>
+                    <h2>Edit Player</h2>
+                    <p>
+                        <label for="txt-name">Name</label>
+                        <input id="txt-name">
+                    </p>
+                    <p>
+                        <label for="txt-age">Age</label>
+                        <input id="txt-age">
+                    </p>
+                    <p>
+                        <label for="txt-position">Position</label>
+                        <input id="txt-position">
+                    </p>
+                    <p>
+                        <label for="txt-bt">Bat/Throw</label>
+                        <input id="txt-bt">
+                    </p>
+                    <p>
+                        <label for="txt-commit">Commitment</label>
+                        <input id="txt-commit">
+                    </p>
+                    <p>
+                        <label for="txt-gradyear">Grad Year</label>
+                        <input id="txt-gradyear">
+                    </p>
+                    <p>
+                        <label for="txt-natrank">National Ranking</label>
+                        <input id="txt-natrank">
+                    </p>
+                    <p>
+                        <label for="txt-staterank">State Ranking</label>
+                        <input id="txt-staterank">
+                    </p>
+                    <p>
+                        <label for="txt-rev">Reviewer</label>
+                        <input id="txt-rev">
+                    </p>
+                    <button id="btn-edit-player">Edit Player</button>
+                </div>
             </div>
         </div>
-        <div id="dessert-list"></div>
+        <!-- END EDIT POP OUT -->
+        <!-- START DELETE POP OUT -->
+        <div id="delete-pop" class="modal">
+            <div class="modal-content">
+                <div id="delete-player" class="delete-form">
+                    <span class="close"></span>
+                    <span id="player-id" class="hidden"></span>
+                    <h2>Delete Player</h2>
+                    <section>
+                        <button id="btn-exit">Nevermind</button>
+                        <button id="btn-delete-player">Confirm Deletion</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- END DELETE POP OUT -->
+        <!-- START PLAYER LIST-->
+        <div id="player-list"></div>
+        <!-- END PLAYER LIST-->
     </body>
 </html>
