@@ -6,14 +6,11 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div id="note" class="notify"><span id="notifyType" class=""></span></div>
+        <div id="all-content">
+            <div id="note" class="notify"><span id="notifyType" class=""></span></div>
         <div class="main-title">
-            <section>
-                <h1>Player Scouting Report</h1>
-            </section>
-            <section>
-                <button id="btn-add-pop" class="add-button">Add Player</button>
-            </section>
+            <h1>Baseball Scouting Reports</h1>
+            <button id="btn-add-pop" class="add-button">Add Player</button>
         </div>
         <!-- START ADDING POP OUT -->
         <div id="adding-pop" class="modal">
@@ -126,7 +123,13 @@
         </div>
         <!-- END DELETE POP OUT -->
         <!-- START PLAYER LIST-->
-        <div id="player-list"></div>
+        <div class="profile">
+            <h2>Player Profiles</h2>
+        </div>
+        <div class="list-out">
+            <div id="player-list"></div>
+        </div>
         <!-- END PLAYER LIST-->
+        </div>
     </body>
 </html>

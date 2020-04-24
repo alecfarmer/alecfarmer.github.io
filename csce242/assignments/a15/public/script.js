@@ -84,9 +84,16 @@ function getPlayerInfo(player) {
     mainSection.classList.add("player");
 
     // TITLE
-    let title = document.createElement("h3");
-    title.textContent = player.name;
+    let title = document.createElement("h2");
+    title.textContent = `${player.name} - ${player.commitment}`;
+    title.classList.add("playertexth2");
     mainSection.append(title);
+
+    // REVIEWER
+    let reviewer = document.createElement("h5");
+    reviewer.textContent = `By ${player.reviewer}`;
+    reviewer.classList.add("playertexth4");
+    mainSection.append(reviewer);
 
     // INNER BUTTON DIV
     let buttonDiv = document.createElement("div");

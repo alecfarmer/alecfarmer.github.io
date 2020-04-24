@@ -1,36 +1,55 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #085f63;
+    background: #2B3136;
+}
+
+#all-content {
+    background: #30373D;
+    margin: 2% 10% 0 10%;
+    border: 4px solid transparent;
+    border-radius: 5px;
+    height: 100%;
 }
 /* START MAIN TITLE */
 .main-title {
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 1px solid rgb(60, 60, 60);
 }
 
 .main-title h1 {
     margin-top: 5px;
+    margin-left: 15px;
     margin-bottom: 5px;
     font-size: 35px;
-    color:white;
+    color: #EAC26E;
+}
+
+.main-title button {
+    margin-right: 15px;
 }
 
 .add-button {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 8px 28px;
+    background-color: transparent;
+    color: #EAC26E;
     text-align: center;
+    width: 20%;
+    padding: 8px 28px;
     font-size: 16px;
     font-weight: 600;
     margin: 4px 2px;
     transition: 0.3s;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
+    border: 1px solid #37A1E3;
 }
   
 .add-button:hover {
-    background-color: black;
-    color: white;
+    background-color: #525252;
 }
 /* END MAIN TITLE */
 /* START POP OUT */
@@ -41,17 +60,17 @@ body {
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 300%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .modal-content {
-    background-color: #ae3b3b;
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: #22282C;
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #ae3b3b;
+    border: 1px solid #525C64;
     width: 40%; /* Could be more or less, depending on screen size */
     border-radius: 10px;
     display: flex;
@@ -59,13 +78,13 @@ body {
 }
 
 .add-form {
-    background:#ae3b3b;
+    background:#22282C;
     padding:5px;
     width:80%;
     margin:5px;
     border-radius:5px;
     text-align: center;
-    color: #facf5a;
+    color: #F1C15E;
 }
 
 .add-form button {
@@ -88,13 +107,13 @@ body {
 }
 
 .edit-form {
-    background:#ae3b3b;
-    padding:5px;
-    width:80%;
-    margin:5px;
-    border-radius:5px;
+    background: #22282C;
+    padding: 5px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 5px;
     text-align: center;
-    color: #facf5a;
+    color: #F1C15E;
 }
 
 .edit-form button {
@@ -117,13 +136,13 @@ body {
 }
 
 .delete-form {
-    background:#ae3b3b;
+    background:#22282C;
     padding:5px;
     width:80%;
     margin:5px;
     border-radius:5px;
     text-align: center;
-    color: #facf5a;
+    color: #F1C15E;
 }
 
 .delete-form button {
@@ -149,8 +168,6 @@ body {
     background: #facf5a;
 }
 
-
-
 .container-fade {
     position: relative;
     width: 300px;
@@ -174,23 +191,54 @@ body {
     opacity: 1;
 }
 
+.list-out {
+    margin: 4px;
+    padding: 2px;
+    border: 1px solid #3C3C3C;
+}
+
+.profile {
+    margin-left: 15px;
+}
+
+.profile h2 {
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+    color: #EAC26E;
+}
+
 #player-list {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
+    padding-left: 4px;
 }
 
 .player {
-    width:30%;
-    background:#ff9f68;
-    padding:5px;
-    margin:5px;
+    width: 97.5%;
+    background: #414850;
+    box-shadow: 0px 6px 0px 1px #2B3238;
+    padding: 5px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    margin: 5px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
+    color: #EAC26E;
 }
 
 .player a {
-    text-decoration:none;
+    text-decoration: none;
+}
+
+.playertexth2 {
+    margin-bottom: 0px;
+    margin-left: 5px;
+    font-size: large;
+}
+
+.playertexth4 {
+    margin-top: 1px;
+    margin-left: 5px;
+    color: #C1CAD4;
 }
 
 .hidden {
@@ -232,33 +280,31 @@ body {
     background:#ff3939;
     color:#ff3939;  
   }
-  
-  .notify {  
-    position:absolute;
-    top:0px;
-    width:99%;
-    height:0;  
-    box-sizing:border-box;
-    color:white;  
-    text-align:center;
-    background:#000000;
-    overflow:hidden;
-    box-sizing:border-box;
-    transition:height .2s;
+
+  .notify {
+      position: absolute;
+      top: 0%;
+      width: 78.6%;
+      margin: 0%;
+      border-radius: 10px;
+      text-align: center;
+      background: black;
+      overflow: hidden;
+      transition: height .2s;
   }
   
   #notifyType:before{
-    display:block;
-    margin-top:15px; 
+    display: block;
+    margin-top: 15px; 
     
   }
   
   .active {  
-    height:50px;
+    height: 50px;
   }
   
   .success:before {
-    Content:"Success!";
+    Content:"Success! Player profile updated";
   }
   
   .failure:before {
