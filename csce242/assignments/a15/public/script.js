@@ -77,29 +77,31 @@ async function displayPlayers() {
 }
 
 function getPlayerInfo(player) {
-    
-    // MAIN SECTION
-    let mainSection = document.createElement("section");
-    mainSection.classList.add("container-fade");
-    mainSection.classList.add("player");
+
+    // MAIN DIV
+    let mainDiv = document.createElement("div");
+    mainDiv.classList.add("player");
+
+    // INFO SECTION
+    let infoSection = document.createElement("section");
+    mainDiv.append(infoSection);
+
+    // BUTTON SECTION
+    let buttonSection = document.createElement("Section");
+    buttonSection.classList.add("buttonSec");
+    mainDiv.append(buttonSection);
 
     // TITLE
     let title = document.createElement("h2");
     title.textContent = `${player.name} - ${player.commitment}`;
     title.classList.add("playertexth2");
-    mainSection.append(title);
+    infoSection.append(title);
 
     // REVIEWER
     let reviewer = document.createElement("h5");
     reviewer.textContent = `By ${player.reviewer}`;
     reviewer.classList.add("playertexth4");
-    mainSection.append(reviewer);
-
-    // INNER BUTTON DIV
-    let buttonDiv = document.createElement("div");
-    buttonDiv.classList.add("overlay");
-    buttonDiv.classList.add("flex");
-    mainSection.append(buttonDiv);
+    infoSection.append(reviewer);
 
     // EDIT BUTTON
     let buttonEdit = document.createElement("button");
@@ -110,7 +112,7 @@ function getPlayerInfo(player) {
         showPlayerDetails(player);
         editExeBtn.style.display = "block";
     }
-    buttonDiv.append(buttonEdit);
+    buttonSection.append(buttonEdit);
 
     // DELETE BUTTON
     let buttonDelete = document.createElement("button");
@@ -121,9 +123,9 @@ function getPlayerInfo(player) {
         showPlayerDetails(player);
         deleteExeBtn.style.display = "block";
     }
-    buttonDiv.append(buttonDelete);
+    buttonSection.append(buttonDelete);
 
-    return mainSection;
+    return mainDiv;
 }
 
 async function showPlayerDetails(player) {

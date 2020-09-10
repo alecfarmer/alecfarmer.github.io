@@ -8,8 +8,8 @@ const mongoose = require("mongoose");
 
 // CONNECT TO DATABASE
 mongoose.connect("mongodb+srv://alec:test@fpcluster-ovts8.mongodb.net/test?retryWrites=true&w=majority", {useUnifiedTopology:true, useNewUrlParser:true})
-    .then(()=>console.log("Successfully connected to mongodb!"))
-    .catch(err => console.error("Couldn't connect to mongdb!", err));
+    .then(()=>console.log("Successfully connected to mongo database!"))
+    .catch(err => console.error("Couldn't connect to mongo database!", err));
 
 // DATABASE LAYOUT
 const playerSchema = new mongoose.Schema ({
@@ -134,6 +134,6 @@ function validatePlayer(player) {
     return Joi.validate(player, schema);
 }
 
-app.listen(3000, ()=>{
-    console.log("Listening on port 3004");
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log("Listening on port 3000");
 })

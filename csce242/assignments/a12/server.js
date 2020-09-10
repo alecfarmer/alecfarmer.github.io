@@ -92,6 +92,6 @@ function validatePlayer(player){
     return Joi.validate(player,schema);
 }
 
-app.listen(3000, ()=>{
+app.listen(3001, ()=>{
     console.log("listening on port 3000");
 })
